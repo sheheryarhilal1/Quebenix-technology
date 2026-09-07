@@ -1,0 +1,4 @@
+const menu=document.querySelector('.hamb'),nav=document.querySelector('.nav nav');menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>nav?.classList.remove('open')));
+const form=document.querySelector('#contactForm');form?.addEventListener('submit',e=>{e.preventDefault();const m=document.querySelector('#formMsg');m.textContent='Thanks! Your message is ready to be connected to email/backend.';m.style.color='#078ff0';form.reset();});
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');let f=b.dataset.filter;document.querySelectorAll('.all-posts .post').forEach(p=>p.style.display=f==='all'||p.dataset.cat===f?'block':'none')}));
