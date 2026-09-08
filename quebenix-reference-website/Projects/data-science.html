@@ -1,0 +1,963 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Data Science Insights | Case Study</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f7fafc;
+      color: #102337;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .case-container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    /* ================= HERO ================= */
+
+    .case-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 110px 20px 90px;
+      color: #fff;
+
+      background:
+        radial-gradient(circle at 82% 20%, rgba(32, 199, 255, .20), transparent 25%),
+        radial-gradient(circle at 15% 80%, rgba(7, 156, 255, .16), transparent 28%),
+        linear-gradient(135deg, #03111e 0%, #061d31 55%, #07263e 100%);
+    }
+
+    .case-hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(32, 199, 255, .13);
+      border-radius: 50%;
+      right: -170px;
+      top: -170px;
+    }
+
+    .case-hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 50%;
+      left: -130px;
+      bottom: -150px;
+    }
+
+    .case-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .case-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 9px 15px;
+      border: 1px solid rgba(91, 202, 255, .35);
+      border-radius: 999px;
+
+      background: rgba(32, 199, 255, .08);
+      color: #5bcaff;
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .case-label span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #20c7ff;
+      box-shadow: 0 0 12px rgba(32, 199, 255, .8);
+    }
+
+    .case-hero h1 {
+      max-width: 900px;
+      margin: 25px 0 22px;
+
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      font-weight: 800;
+    }
+
+    .case-hero h1 span {
+      color: #20c7ff;
+    }
+
+    .case-description {
+      max-width: 720px;
+      margin: 0;
+
+      color: #9db3c4;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+
+      margin-top: 45px;
+    }
+
+    .meta-card {
+      padding: 18px;
+
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(255, 255, 255, .10);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    .meta-card small {
+      display: block;
+      margin-bottom: 7px;
+
+      color: #6f899b;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+
+    .meta-card strong {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ================= SHOWCASE ================= */
+
+    .showcase {
+      padding: 80px 20px 30px;
+      background: #f7fafc;
+    }
+
+    .showcase-frame {
+      width: min(1050px, 94%);
+      margin: auto;
+      padding: 12px;
+
+      background: linear-gradient(135deg, #08263b, #03111e);
+      border: 1px solid #16435e;
+      border-radius: 20px;
+
+      box-shadow:
+        0 30px 70px rgba(3, 17, 30, .20),
+        0 10px 30px rgba(3, 17, 30, .12);
+    }
+
+    .showcase-inner {
+      overflow: hidden;
+      border-radius: 12px;
+      background: #071a29;
+    }
+
+    .showcase-inner img {
+      display: block;
+      width: 100%;
+      height: 570px;
+      object-fit: cover;
+    }
+
+    /* ================= OVERVIEW ================= */
+
+    .overview {
+      padding: 85px 20px;
+      background: #fff;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .section-kicker {
+      margin-bottom: 14px;
+
+      color: #079cff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .overview h2 {
+      margin: 0 0 22px;
+
+      color: #082238;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -1.8px;
+    }
+
+    .overview p {
+      margin: 0 0 18px;
+
+      color: #667d8d;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .info-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .info-card {
+      padding: 20px;
+
+      background: #f8fbfd;
+      border: 1px solid #dbe7ef;
+      border-radius: 12px;
+    }
+
+    .info-card small {
+      display: block;
+      margin-bottom: 6px;
+
+      color: #7b91a0;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    .info-card strong {
+      color: #102337;
+      font-size: 14px;
+    }
+
+    /* ================= PROBLEM SOLUTION ================= */
+
+    .problem-solution {
+      padding: 85px 20px;
+      background: #f7fafc;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+
+      color: #082238;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+    }
+
+    .ps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .ps-card {
+      padding: 32px;
+
+      background: #fff;
+      border: 1px solid #dbe7ef;
+      border-radius: 16px;
+
+      transition: .25s ease;
+    }
+
+    .ps-card:hover {
+      transform: translateY(-5px);
+      border-color: #20c7ff;
+      box-shadow: 0 20px 45px rgba(7, 156, 255, .09);
+    }
+
+    .ps-icon {
+      display: grid;
+      place-items: center;
+
+      width: 48px;
+      height: 48px;
+      margin-bottom: 22px;
+
+      background: #e8f8ff;
+      color: #079cff;
+
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .ps-card h3 {
+      margin: 0 0 12px;
+
+      color: #102337;
+      font-size: 21px;
+    }
+
+    .ps-card p {
+      margin: 0;
+
+      color: #6b8190;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* ================= TECHNOLOGY ================= */
+
+    .technology {
+      padding: 85px 20px;
+      background: #fff;
+    }
+
+    .technology h2 {
+      margin: 0 0 30px;
+
+      color: #082238;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -1.5px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech-pill {
+      padding: 12px 17px;
+
+      background: #f4f8fb;
+      border: 1px solid #dbe7ef;
+      border-radius: 999px;
+
+      color: #29475c;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ================= HIGHLIGHTS ================= */
+
+    .highlights {
+      padding: 85px 20px;
+
+      background:
+        radial-gradient(circle at 90% 10%, rgba(32, 199, 255, .13), transparent 25%),
+        linear-gradient(135deg, #03111e, #07263e);
+    }
+
+    .highlights .section-kicker {
+      color: #20c7ff;
+    }
+
+    .highlights h2 {
+      margin: 0 0 42px;
+
+      color: #fff;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -1.5px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .highlight-card {
+      padding: 30px;
+
+      background: rgba(255, 255, 255, .035);
+      border: 1px solid #16435e;
+      border-radius: 16px;
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 12px;
+
+      color: #20c7ff;
+      font-size: 19px;
+    }
+
+    .highlight-card p {
+      margin: 0;
+
+      color: #9db3c4;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ================= SCREENSHOTS ================= */
+
+    .screenshots {
+      padding: 85px 20px;
+      background: #f7fafc;
+    }
+
+    .screenshots h2 {
+      margin: 0 0 40px;
+
+      color: #082238;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -1.5px;
+    }
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .screenshot-card {
+      overflow: hidden;
+
+      background: #fff;
+      border: 1px solid #dbe7ef;
+      border-radius: 16px;
+
+      box-shadow: 0 10px 30px rgba(16, 35, 55, .06);
+    }
+
+    .screenshot-card img {
+      display: block;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      padding: 20px 20px 90px;
+      background: #fff;
+    }
+
+    .cta-box {
+      width: min(1050px, 92%);
+      margin: auto;
+      padding: 65px 30px;
+
+      text-align: center;
+
+      background:
+        radial-gradient(circle at 50% 0%, rgba(32, 199, 255, .14), transparent 35%),
+        linear-gradient(135deg, #03111e, #07263e);
+
+      border: 1px solid #16435e;
+      border-radius: 20px;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 15px;
+
+      color: #fff;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -1.5px;
+    }
+
+    .cta-box p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+
+      color: #9db3c4;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 145px;
+      padding: 13px 20px;
+
+      border-radius: 9px;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: #079cff;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #20c7ff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: #fff;
+      border: 1px solid #31576e;
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .btn-outline:hover {
+      border-color: #20c7ff;
+      color: #20c7ff;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      .case-meta {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshots-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-inner img {
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .case-hero {
+        padding: 80px 20px 65px;
+      }
+
+      .case-hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+      }
+
+      .case-description {
+        font-size: 15px;
+      }
+
+      .case-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase {
+        padding-top: 55px;
+      }
+
+      .showcase-frame {
+        width: 96%;
+      }
+
+      .showcase-inner img {
+        height: 330px;
+      }
+
+      .overview,
+      .problem-solution,
+      .technology,
+      .highlights,
+      .screenshots {
+        padding: 65px 20px;
+      }
+
+      .ps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshot-card img {
+        height: 250px;
+      }
+
+      .cta {
+        padding-bottom: 65px;
+      }
+
+      .cta-box {
+        padding: 50px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="case-hero">
+    <div class="case-container case-hero-content">
+
+      <div class="case-label">
+        <span></span>
+        Data Science
+      </div>
+
+      <h1>
+        Data Science <span>Insights</span>
+      </h1>
+
+      <p class="case-description">
+        A data science project focused on transforming raw data into
+        meaningful insights, identifying patterns, and supporting
+        smarter business decisions through data-driven analysis.
+      </p>
+
+      <div class="case-meta">
+
+        <div class="meta-card">
+          <small>Role</small>
+          <strong>Data Analyst</strong>
+        </div>
+
+        <div class="meta-card">
+          <small>Status</small>
+          <strong>Completed</strong>
+        </div>
+
+        <div class="meta-card">
+          <small>Type</small>
+          <strong>Data Science</strong>
+        </div>
+
+        <div class="meta-card">
+          <small>Focus</small>
+          <strong>Data Insights</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SHOWCASE ================= -->
+
+  <section class="showcase">
+    <div class="showcase-frame">
+      <div class="showcase-inner">
+        <img
+          src="../assets/Data.jpg"
+          alt="Data Science Insights Project"
+        >
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= OVERVIEW ================= -->
+
+  <section class="overview">
+    <div class="case-container overview-grid">
+
+      <div>
+
+        <div class="section-kicker">
+          Project Overview
+        </div>
+
+        <h2>
+          Turning raw data into
+          <br>
+          <span style="color:#079cff;">actionable insights.</span>
+        </h2>
+
+        <p>
+          This Data Science project focuses on analyzing structured data
+          to discover trends, relationships, patterns, and useful business
+          insights.
+        </p>
+
+        <p>
+          The workflow includes data preparation, exploratory analysis,
+          visualization, and interpretation of results to make complex
+          information easier to understand and use.
+        </p>
+
+      </div>
+
+      <div class="info-stack">
+
+        <div class="info-card">
+          <small>Project Type</small>
+          <strong>Data Science</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Analysis</small>
+          <strong>Exploratory Data Analysis</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Output</small>
+          <strong>Data-Driven Insights</strong>
+        </div>
+
+        <div class="info-card">
+          <small>Primary Goal</small>
+          <strong>Better Decision Making</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= PROBLEM & SOLUTION ================= -->
+
+  <section class="problem-solution">
+    <div class="case-container">
+
+      <div class="section-heading">
+
+        <div class="section-kicker">
+          Challenge & Approach
+        </div>
+
+        <h2>
+          From messy data to
+          meaningful answers.
+        </h2>
+
+      </div>
+
+      <div class="ps-grid">
+
+        <div class="ps-card">
+
+          <div class="ps-icon">01</div>
+
+          <h3>The Challenge</h3>
+
+          <p>
+            Raw datasets can contain inconsistent values, missing
+            information, duplicate records, and complex relationships
+            that make analysis difficult. Finding useful patterns
+            manually can also be time-consuming.
+          </p>
+
+        </div>
+
+        <div class="ps-card">
+
+          <div class="ps-icon">02</div>
+
+          <h3>The Solution</h3>
+
+          <p>
+            The data was prepared and explored using a structured
+            analytical workflow. Patterns and relationships were
+            identified through statistical analysis and visualizations,
+            converting raw information into clear insights.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= TECHNOLOGY ================= -->
+
+  <section class="technology">
+    <div class="case-container">
+
+      <div class="section-kicker">
+        Technologies
+      </div>
+
+      <h2>
+        Tools used to analyze the data.
+      </h2>
+
+      <div class="tech-list">
+
+        <div class="tech-pill">Python</div>
+        <div class="tech-pill">Pandas</div>
+        <div class="tech-pill">NumPy</div>
+        <div class="tech-pill">Matplotlib</div>
+        <div class="tech-pill">Seaborn</div>
+        <div class="tech-pill">Data Cleaning</div>
+        <div class="tech-pill">EDA</div>
+        <div class="tech-pill">Statistical Analysis</div>
+        <div class="tech-pill">Data Visualization</div>
+        <div class="tech-pill">Business Insights</div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= HIGHLIGHTS ================= -->
+
+  <section class="highlights">
+    <div class="case-container">
+
+      <div class="section-kicker">
+        Key Highlights
+      </div>
+
+      <h2>
+        What the project delivers.
+      </h2>
+
+      <div class="highlight-grid">
+
+        <div class="highlight-card">
+
+          <h3>Data Analysis</h3>
+
+          <p>
+            Raw information is analyzed systematically to understand
+            important trends, distributions, relationships, and
+            performance patterns.
+          </p>
+
+        </div>
+
+        <div class="highlight-card">
+
+          <h3>Data Visualization</h3>
+
+          <p>
+            Complex findings are represented through clear visualizations
+            that make important patterns easier to identify and communicate.
+          </p>
+
+        </div>
+
+        <div class="highlight-card">
+
+          <h3>Actionable Insights</h3>
+
+          <p>
+            Analytical findings are converted into practical insights
+            that can support better planning, evaluation, and business
+            decision-making.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SCREENSHOTS ================= -->
+
+  <section class="screenshots">
+    <div class="case-container">
+
+      <div class="section-kicker">
+        Project Preview
+      </div>
+
+      <h2>
+        Data science in action.
+      </h2>
+
+      <div class="screenshots-grid">
+
+        <div class="screenshot-card">
+          <img
+            src="../assets/Data.jpg"
+            alt="Data Science Dashboard Preview"
+          >
+        </div>
+
+        <div class="screenshot-card">
+          <img
+            src="../assets/Data.jpg"
+            alt="Data Analysis Preview"
+          >
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CTA ================= -->
+
+  <section class="cta">
+    <div class="cta-box">
+
+      <h2>
+        Need meaningful insights from your data?
+      </h2>
+
+      <p>
+        Turn complex datasets into clear analysis, visualizations,
+        and business-focused insights.
+      </p>
+
+      <div class="cta-buttons">
+
+        <a href="../index.html" class="btn btn-primary">
+          Back to Portfolio
+        </a>
+
+        <a href="../index.html#contact" class="btn btn-outline">
+          Get in Touch
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
+```

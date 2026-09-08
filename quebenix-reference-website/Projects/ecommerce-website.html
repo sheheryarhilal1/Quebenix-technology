@@ -1,0 +1,1174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ecommerce Website | Case Study</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            background: #f7fafc;
+            color: #102337;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 85% 20%, rgba(32, 199, 255, .20), transparent 28%),
+                radial-gradient(circle at 10% 80%, rgba(7, 156, 255, .12), transparent 30%),
+                linear-gradient(135deg, #03111e 0%, #061d31 55%, #03111e 100%);
+
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(32, 199, 255, .15);
+            border-radius: 50%;
+            right: -180px;
+            top: -160px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(7, 156, 255, .12);
+            border-radius: 50%;
+            left: -150px;
+            bottom: -150px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .case-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 15px;
+            border: 1px solid rgba(32, 199, 255, .30);
+            border-radius: 50px;
+            color: #20c7ff;
+            background: rgba(32, 199, 255, .07);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .case-label::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: #20c7ff;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #20c7ff;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #20c7ff;
+        }
+
+        .hero-description {
+            max-width: 750px;
+            color: #b8c9d7;
+            font-size: 18px;
+            margin-bottom: 42px;
+        }
+
+        /* =========================
+           META
+        ========================= */
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .045);
+            backdrop-filter: blur(10px);
+        }
+
+        .meta-card span {
+            display: block;
+            color: #8297a9;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .meta-card strong {
+            font-size: 14px;
+            color: white;
+        }
+
+        /* =========================
+           SHOWCASE
+        ========================= */
+
+        .showcase {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .showcase-frame {
+            border-radius: 22px;
+            padding: 10px;
+            background: linear-gradient(135deg, #dceefa, #eef8fd);
+            box-shadow: 0 25px 70px rgba(16, 35, 55, .12);
+        }
+
+        .showcase-frame img {
+            width: 100%;
+            height: 570px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+            background: #edf3f7;
+        }
+
+        /* =========================
+           SECTION COMMON
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: #079cff;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.12;
+            letter-spacing: -2px;
+            color: #102337;
+            margin-bottom: 25px;
+        }
+
+        .section-description {
+            color: #718496;
+            max-width: 720px;
+            font-size: 16px;
+        }
+
+        /* =========================
+           OVERVIEW
+        ========================= */
+
+        .overview {
+            background: #f7fafc;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .overview-text p {
+            color: #607487;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info-card {
+            background: #fff;
+            border: 1px solid #dbe7ef;
+            border-radius: 15px;
+            padding: 24px;
+            transition: .3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: #20c7ff;
+            box-shadow: 0 15px 35px rgba(7, 156, 255, .08);
+        }
+
+        .info-card span {
+            display: block;
+            color: #8495a4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+
+        .info-card strong {
+            color: #102337;
+            font-size: 14px;
+        }
+
+        /* =========================
+           PROBLEM & SOLUTION
+        ========================= */
+
+        .challenge-section {
+            background: #fff;
+        }
+
+        .challenge-header {
+            max-width: 760px;
+            margin-bottom: 50px;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .challenge-card {
+            padding: 38px;
+            border-radius: 20px;
+            border: 1px solid #dbe7ef;
+            background: #f8fbfd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-card::after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: rgba(32, 199, 255, .07);
+            right: -50px;
+            bottom: -50px;
+        }
+
+        .challenge-number {
+            color: #079cff;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .challenge-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .challenge-card p {
+            color: #718496;
+            font-size: 15px;
+        }
+
+        /* =========================
+           TECHNOLOGY
+        ========================= */
+
+        .technology-section {
+            background:
+                linear-gradient(135deg, #03111e, #061d31);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .technology-section .section-title {
+            color: white;
+        }
+
+        .technology-section .section-description {
+            color: #9db1c1;
+        }
+
+        .tech-header {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-pill {
+            padding: 13px 19px;
+            border: 1px solid rgba(32, 199, 255, .22);
+            border-radius: 50px;
+            color: #d9edf7;
+            background: rgba(255, 255, 255, .04);
+            font-size: 13px;
+            font-weight: 600;
+            transition: .3s ease;
+        }
+
+        .tech-pill:hover {
+            background: rgba(32, 199, 255, .10);
+            border-color: #20c7ff;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           HIGHLIGHTS
+        ========================= */
+
+        .highlights {
+            background: #f7fafc;
+        }
+
+        .highlight-header {
+            margin-bottom: 50px;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .highlight-card {
+            background: white;
+            border: 1px solid #dbe7ef;
+            border-radius: 18px;
+            padding: 32px;
+            transition: .3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(16, 35, 55, .08);
+            border-color: #b8eafa;
+        }
+
+        .highlight-card .number {
+            font-size: 12px;
+            color: #079cff;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .highlight-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-card p {
+            color: #718496;
+            font-size: 14px;
+        }
+
+        /* =========================
+           SCREENSHOTS
+        ========================= */
+
+        .screenshots {
+            background: #fff;
+        }
+
+        .screenshot-header {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .screenshot-card {
+            border: 1px solid #dbe7ef;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #f7fafc;
+            transition: .3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(16, 35, 55, .10);
+        }
+
+        .screenshot-image {
+            padding: 10px;
+        }
+
+        .screenshot-image img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #edf3f7;
+        }
+
+        .screenshot-card figcaption {
+            padding: 18px 22px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #102337;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .case-cta {
+            padding: 100px 0;
+            background: #f7fafc;
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 80px 30px;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 50% 0%, rgba(32, 199, 255, .18), transparent 35%),
+                linear-gradient(135deg, #03111e, #061d31);
+        }
+
+        .cta-box .section-label {
+            color: #20c7ff;
+        }
+
+        .cta-box h2 {
+            color: white;
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .cta-box p {
+            max-width: 650px;
+            margin: auto;
+            color: #9eb2c1;
+            margin-bottom: 32px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            color: #03111e;
+            background: #20c7ff;
+        }
+
+        .btn-primary:hover {
+            background: #079cff;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(32, 199, 255, .20);
+        }
+
+        .btn-outline {
+            color: white;
+            border: 1px solid rgba(255, 255, 255, .20);
+            background: rgba(255, 255, 255, .04);
+        }
+
+        .btn-outline:hover {
+            border-color: #20c7ff;
+            color: #20c7ff;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                min-height: auto;
+                padding: 110px 0 80px;
+            }
+
+            .meta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-frame img {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero {
+                padding: 90px 0 65px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .meta-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .meta-card {
+                padding: 16px;
+            }
+
+            .showcase {
+                padding: 50px 0;
+            }
+
+            .showcase-frame {
+                padding: 7px;
+                border-radius: 15px;
+            }
+
+            .showcase-frame img {
+                height: 330px;
+                border-radius: 10px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .info-grid,
+            .challenge-grid,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .challenge-card {
+                padding: 28px;
+            }
+
+            .screenshot-image img {
+                height: 270px;
+            }
+
+            .cta-box {
+                padding: 60px 22px;
+            }
+
+            .cta-box h2 {
+                font-size: 34px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="case-label">
+                    Web Development
+                </div>
+
+                <h1>
+                    Ecommerce <span>Website</span>
+                </h1>
+
+                <p class="hero-description">
+                    A modern and responsive ecommerce website designed to provide
+                    customers with a smooth shopping experience, clear product
+                    presentation and an engaging digital storefront.
+                </p>
+
+                <div class="meta-grid">
+
+                    <div class="meta-card">
+                        <span>Role</span>
+                        <strong>Web Developer</strong>
+                    </div>
+
+                    <div class="meta-card">
+                        <span>Status</span>
+                        <strong>Completed</strong>
+                    </div>
+
+                    <div class="meta-card">
+                        <span>Type</span>
+                        <strong>Ecommerce Website</strong>
+                    </div>
+
+                    <div class="meta-card">
+                        <span>Focus</span>
+                        <strong>UI & UX</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         SHOWCASE
+    ========================== -->
+
+    <section class="showcase">
+
+        <div class="container">
+
+            <div class="showcase-frame">
+                <img
+                    src="../assets/banner.jpg"
+                    alt="Ecommerce Website Project"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECT OVERVIEW
+    ========================== -->
+
+    <section class="overview">
+
+        <div class="container">
+
+            <div class="overview-grid">
+
+                <div class="overview-text">
+
+                    <div class="section-label">
+                        Project Overview
+                    </div>
+
+                    <h2 class="section-title">
+                        Building a modern
+                        <br>
+                        ecommerce experience.
+                    </h2>
+
+                    <p>
+                        Ecommerce websites need to do more than display products.
+                        They need to create a smooth and trustworthy experience
+                        that helps customers discover products, understand their
+                        options and move naturally toward purchase.
+                    </p>
+
+                    <p>
+                        This project focuses on creating a clean, responsive and
+                        user-friendly ecommerce interface with modern layouts,
+                        product-focused sections and an engaging visual experience
+                        across desktop and mobile devices.
+                    </p>
+
+                </div>
+
+
+                <div class="info-grid">
+
+                    <div class="info-card">
+                        <span>Project Type</span>
+                        <strong>Ecommerce Website</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span>Development</span>
+                        <strong>Frontend Development</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span>Output</span>
+                        <strong>Responsive Website</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span>Primary Goal</span>
+                        <strong>Better User Experience</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROBLEM & SOLUTION
+    ========================== -->
+
+    <section class="challenge-section">
+
+        <div class="container">
+
+            <div class="challenge-header">
+
+                <div class="section-label">
+                    Problem & Solution
+                </div>
+
+                <h2 class="section-title">
+                    From a basic store to a
+                    <br>
+                    better shopping experience.
+                </h2>
+
+                <p class="section-description">
+                    The objective was to create an ecommerce experience that
+                    looks professional, works smoothly and makes it easier for
+                    customers to explore products.
+                </p>
+
+            </div>
+
+
+            <div class="challenge-grid">
+
+                <article class="challenge-card">
+
+                    <div class="challenge-number">
+                        01 — Problem
+                    </div>
+
+                    <h3>
+                        Creating a clear shopping journey
+                    </h3>
+
+                    <p>
+                        Ecommerce interfaces can become difficult to navigate
+                        when product information, categories and calls-to-action
+                        are not organized properly. Customers need a clear path
+                        from discovering a product to understanding it and taking
+                        action.
+                    </p>
+
+                </article>
+
+
+                <article class="challenge-card">
+
+                    <div class="challenge-number">
+                        02 — Solution
+                    </div>
+
+                    <h3>
+                        Designing a clean ecommerce interface
+                    </h3>
+
+                    <p>
+                        I designed a structured layout with clear navigation,
+                        product-focused sections, responsive components and
+                        visually balanced content to create a smoother and more
+                        engaging shopping experience.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECHNOLOGIES
+    ========================== -->
+
+    <section class="technology-section">
+
+        <div class="container">
+
+            <div class="tech-header">
+
+                <div class="section-label">
+                    Technologies
+                </div>
+
+                <h2 class="section-title">
+                    Built with modern
+                    <br>
+                    web technologies.
+                </h2>
+
+                <p class="section-description">
+                    A combination of frontend technologies and responsive design
+                    practices was used to build a professional ecommerce
+                    experience.
+                </p>
+
+            </div>
+
+
+            <div class="tech-list">
+
+                <div class="tech-pill">
+                    HTML5
+                </div>
+
+                <div class="tech-pill">
+                    CSS3
+                </div>
+
+                <div class="tech-pill">
+                    JavaScript
+                </div>
+
+                <div class="tech-pill">
+                    Responsive Design
+                </div>
+
+                <div class="tech-pill">
+                    UI/UX Design
+                </div>
+
+                <div class="tech-pill">
+                    Frontend Development
+                </div>
+
+                <div class="tech-pill">
+                    Product UI
+                </div>
+
+                <div class="tech-pill">
+                    Ecommerce Development
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KEY HIGHLIGHTS
+    ========================== -->
+
+    <section class="highlights">
+
+        <div class="container">
+
+            <div class="highlight-header">
+
+                <div class="section-label">
+                    Key Highlights
+                </div>
+
+                <h2 class="section-title">
+                    Designed around
+                    <br>
+                    the customer experience.
+                </h2>
+
+            </div>
+
+
+            <div class="highlight-grid">
+
+                <article class="highlight-card">
+
+                    <div class="number">
+                        01 — Responsive Design
+                    </div>
+
+                    <h3>
+                        Mobile-Friendly Experience
+                    </h3>
+
+                    <p>
+                        Built with responsive layouts so customers can browse
+                        products comfortably across desktop, tablet and mobile
+                        devices.
+                    </p>
+
+                </article>
+
+
+                <article class="highlight-card">
+
+                    <div class="number">
+                        02 — Product Experience
+                    </div>
+
+                    <h3>
+                        Clear Product Presentation
+                    </h3>
+
+                    <p>
+                        Product sections were structured to make important
+                        information easy to scan while keeping the interface
+                        visually clean and engaging.
+                    </p>
+
+                </article>
+
+
+                <article class="highlight-card">
+
+                    <div class="number">
+                        03 — User Interface
+                    </div>
+
+                    <h3>
+                        Modern Visual Design
+                    </h3>
+
+                    <p>
+                        A consistent visual system, spacing and typography were
+                        used to create a professional ecommerce interface that
+                        feels simple and trustworthy.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECT PREVIEW
+    ========================== -->
+
+    <section class="screenshots">
+
+        <div class="container">
+
+            <div class="screenshot-header">
+
+                <div class="section-label">
+                    Project Preview
+                </div>
+
+                <h2 class="section-title">
+                    Ecommerce website
+                    <br>
+                    interface preview.
+                </h2>
+
+                <p class="section-description">
+                    A visual preview of the ecommerce website and its
+                    customer-focused interface components.
+                </p>
+
+            </div>
+
+
+            <div class="screenshot-grid">
+
+                <figure class="screenshot-card">
+
+                    <div class="screenshot-image">
+                        <img
+                            src="../assets/banner.jpg"
+                            alt="Ecommerce Website"
+                        >
+                    </div>
+
+                    <figcaption>
+                        Ecommerce Website Homepage
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="screenshot-card">
+
+                    <div class="screenshot-image">
+                        <img
+                            src="../assets/banner.jpg"
+                            alt="Ecommerce Website Preview"
+                        >
+                    </div>
+
+                    <figcaption>
+                        Ecommerce Website Preview
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="case-cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div class="section-label">
+                    Start Your Project
+                </div>
+
+                <h2>
+                    Have a website project
+                    <br>
+                    in mind?
+                </h2>
+
+                <p>
+                    Let's create a modern, responsive and engaging digital
+                    experience that helps your business grow online.
+                </p>
+
+                <div class="btn-group">
+
+                    <a
+                        href="../index.html#contact"
+                        class="btn btn-primary"
+                    >
+                        Start a Project →
+                    </a>
+
+                    <a
+                        href="../index.html#portfolio"
+                        class="btn btn-outline"
+                    >
+                        ← Back to Portfolio
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
+```

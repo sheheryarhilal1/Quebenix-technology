@@ -1,0 +1,1046 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Review | Case Study</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: #f7fafc;
+            color: #102337;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .case-page {
+            overflow: hidden;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .case-hero {
+            position: relative;
+            padding: 125px 0 90px;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(7, 156, 255, .20), transparent 30%),
+                radial-gradient(circle at 15% 80%, rgba(32, 199, 255, .12), transparent 30%),
+                linear-gradient(135deg, #03111e, #06243b 55%, #03111e);
+            color: #fff;
+        }
+
+        .case-hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(32, 199, 255, .12);
+            border-radius: 50%;
+            right: -180px;
+            top: -180px;
+        }
+
+        .case-container {
+            width: min(1120px, 92%);
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #5bcaff;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 45px;
+            transition: .3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .case-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 14px;
+            border: 1px solid rgba(91, 202, 255, .3);
+            border-radius: 30px;
+            background: rgba(7, 156, 255, .08);
+            color: #5bcaff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .case-label span {
+            width: 7px;
+            height: 7px;
+            background: #20c7ff;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #20c7ff;
+        }
+
+        .case-title {
+            max-width: 900px;
+            margin-top: 25px;
+        }
+
+        .case-title h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: .98;
+            margin: 0;
+            letter-spacing: -3px;
+        }
+
+        .case-title h1 span {
+            color: #20c7ff;
+        }
+
+        .case-description {
+            max-width: 720px;
+            margin-top: 28px;
+            color: #a9c0d1;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           META
+        ========================= */
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 45px;
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .meta-item small {
+            display: block;
+            color: #718b9d;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .meta-item strong {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* =========================
+           SHOWCASE
+        ========================= */
+
+        .showcase-section {
+            margin-top: -50px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .showcase-frame {
+            padding: 10px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .30);
+        }
+
+        .showcase-inner {
+            overflow: hidden;
+            border-radius: 14px;
+            background: #fff;
+        }
+
+        .showcase-image {
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           OVERVIEW
+        ========================= */
+
+        .overview {
+            padding: 100px 0 70px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.5fr .8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .section-label {
+            color: #168cff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .overview-main h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.1;
+            margin: 12px 0 20px;
+            color: #102337;
+        }
+
+        .overview-main h2 span {
+            color: #168cff;
+        }
+
+        .overview-main p {
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.9;
+            max-width: 700px;
+        }
+
+        .info-stack {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-card {
+            padding: 22px;
+            background: #fff;
+            border: 1px solid #e1eaf0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(16, 35, 55, .05);
+        }
+
+        .info-card small {
+            color: #718496;
+            display: block;
+            margin-bottom: 7px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .info-card strong {
+            font-size: 15px;
+            color: #102337;
+        }
+
+        /* =========================
+           PROBLEM / SOLUTION
+        ========================= */
+
+        .challenge-section {
+            padding: 80px 0;
+            background: #f0f6fa;
+        }
+
+        .challenge-head {
+            margin-bottom: 35px;
+        }
+
+        .challenge-head h2 {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .challenge-card {
+            position: relative;
+            padding: 35px;
+            border-radius: 20px;
+            background: #fff;
+            border: 1px solid #dfe9ef;
+            overflow: hidden;
+        }
+
+        .challenge-card::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            right: -70px;
+            bottom: -70px;
+            background: rgba(7, 156, 255, .06);
+        }
+
+        .challenge-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #eaf7ff;
+            color: #168cff;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .challenge-card h3 {
+            font-size: 22px;
+            margin: 0 0 12px;
+        }
+
+        .challenge-card p {
+            color: #64748b;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* =========================
+           TECHNOLOGIES
+        ========================= */
+
+        .technology-section {
+            padding: 90px 0;
+        }
+
+        .technology-head {
+            text-align: center;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .technology-head h2 {
+            font-size: 40px;
+            margin: 10px 0 15px;
+        }
+
+        .technology-head p {
+            color: #718496;
+            line-height: 1.8;
+        }
+
+        .technologies {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .tech {
+            padding: 11px 18px;
+            border-radius: 30px;
+            background: #eef7ff;
+            border: 1px solid #d7edfb;
+            color: #168cff;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .tech:hover {
+            transform: translateY(-3px);
+            background: #e1f3ff;
+        }
+
+        /* =========================
+           HIGHLIGHTS
+        ========================= */
+
+        .highlights {
+            padding: 75px 0;
+            background: #03111e;
+            color: #fff;
+        }
+
+        .highlights h2 {
+            text-align: center;
+            font-size: 38px;
+            margin: 0 0 40px;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .highlight-card {
+            padding: 30px;
+            border: 1px solid #16435e;
+            border-radius: 17px;
+            background: #082238;
+            transition: .3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-7px);
+            border-color: #168cff;
+        }
+
+        .highlight-number {
+            font-size: 32px;
+            color: #20c7ff;
+            font-weight: 800;
+        }
+
+        .highlight-card h3 {
+            font-size: 18px;
+            margin: 12px 0 8px;
+        }
+
+        .highlight-card p {
+            color: #8da5b7;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* =========================
+           SCREENSHOTS
+        ========================= */
+
+        .screenshots {
+            padding: 100px 0;
+        }
+
+        .screenshots-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .screenshots-head h2 {
+            font-size: 40px;
+            margin: 10px 0 0;
+        }
+
+        .screenshots-head p {
+            color: #718496;
+            max-width: 420px;
+            line-height: 1.7;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .screenshot-card {
+            padding: 8px;
+            background: #fff;
+            border: 1px solid #dce7ee;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(16, 35, 55, .08);
+            overflow: hidden;
+            transition: .3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 50px rgba(16, 35, 55, .13);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .case-cta {
+            padding: 80px 0;
+            background:
+                radial-gradient(circle at 80% 50%, rgba(32, 199, 255, .16), transparent 35%),
+                linear-gradient(135deg, #06243b, #03111e);
+            color: #fff;
+            text-align: center;
+        }
+
+        .case-cta h2 {
+            font-size: clamp(32px, 5vw, 50px);
+            margin: 0 0 15px;
+        }
+
+        .case-cta p {
+            color: #9db5c6;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .case-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .case-btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 9px;
+            background: #168cff;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .case-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(7, 156, 255, .25);
+        }
+
+        .case-btn.secondary {
+            background: transparent;
+            border: 1px solid #31546a;
+        }
+
+        .case-btn.secondary:hover {
+            border-color: #20c7ff;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:900px) {
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-meta {
+                gap: 25px;
+            }
+        }
+
+        @media(max-width:700px) {
+
+            .case-hero {
+                padding: 105px 0 75px;
+            }
+
+            .case-title h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .case-description {
+                font-size: 16px;
+            }
+
+            .challenge-grid,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshots-head {
+                display: block;
+            }
+
+            .screenshots-head p {
+                margin-top: 15px;
+            }
+
+            .overview,
+            .screenshots {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="case-page">
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="case-hero">
+
+            <div class="case-container">
+
+                <a href="../index.html#portfolio" class="back-btn">
+                    ← Back to Portfolio
+                </a>
+
+                <div class="case-label">
+                    <span></span>
+                    Data Analytics
+                </div>
+
+                <div class="case-title">
+
+                    <h1>
+                        Customer <span>Review</span>
+                        Analytics
+                    </h1>
+
+                    <p class="case-description">
+                        An interactive customer review analytics project designed
+                        to transform customer feedback into meaningful insights,
+                        identify sentiment patterns and understand overall
+                        customer satisfaction.
+                    </p>
+
+                </div>
+
+                <div class="hero-meta">
+
+                    <div class="meta-item">
+                        <small>Role</small>
+                        <strong>Data Analyst</strong>
+                    </div>
+
+                    <div class="meta-item">
+                        <small>Status</small>
+                        <strong>Completed</strong>
+                    </div>
+
+                    <div class="meta-item">
+                        <small>Type</small>
+                        <strong>Review Analytics</strong>
+                    </div>
+
+                    <div class="meta-item">
+                        <small>Focus</small>
+                        <strong>Customer Intelligence</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECT SHOWCASE
+        ========================= -->
+
+        <section class="showcase-section">
+
+            <div class="case-container">
+
+                <div class="showcase-frame">
+
+                    <div class="showcase-inner">
+
+                        <img
+                            src="../assets/Customer Review.png"
+                            alt="Customer Review Analytics Dashboard"
+                            class="showcase-image">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OVERVIEW
+        ========================= -->
+
+        <section class="overview">
+
+            <div class="case-container">
+
+                <div class="overview-grid">
+
+                    <div class="overview-main">
+
+                        <span class="section-label">
+                            Project Overview
+                        </span>
+
+                        <h2>
+                            Turning customer feedback into
+                            <span>business insights.</span>
+                        </h2>
+
+                        <p>
+                            Customer reviews contain valuable information about
+                            how users experience a product or service. However,
+                            large amounts of unstructured review data can be
+                            difficult to understand without proper analysis.
+                        </p>
+
+                        <p>
+                            This project focuses on analyzing customer ratings,
+                            review text, countries and review patterns to
+                            understand customer satisfaction and identify
+                            positive and negative feedback trends.
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-stack">
+
+                        <div class="info-card">
+                            <small>Dataset</small>
+                            <strong>Customer Reviews</strong>
+                        </div>
+
+                        <div class="info-card">
+                            <small>Analysis</small>
+                            <strong>Rating & Sentiment Analysis</strong>
+                        </div>
+
+                        <div class="info-card">
+                            <small>Output</small>
+                            <strong>Interactive Dashboard</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROBLEM / SOLUTION
+        ========================= -->
+
+        <section class="challenge-section">
+
+            <div class="case-container">
+
+                <div class="challenge-head">
+
+                    <span class="section-label">
+                        The Challenge
+                    </span>
+
+                    <h2>
+                        From raw reviews to clear insights.
+                    </h2>
+
+                </div>
+
+
+                <div class="challenge-grid">
+
+                    <div class="challenge-card">
+
+                        <div class="challenge-icon">
+                            01
+                        </div>
+
+                        <h3>
+                            Problem
+                        </h3>
+
+                        <p>
+                            The review dataset contained a large number of
+                            customer comments and ratings. It was difficult to
+                            quickly understand rating distribution, customer
+                            sentiment, review patterns and which countries
+                            generated the most positive or negative feedback.
+                        </p>
+
+                    </div>
+
+
+                    <div class="challenge-card">
+
+                        <div class="challenge-icon">
+                            02
+                        </div>
+
+                        <h3>
+                            Solution
+                        </h3>
+
+                        <p>
+                            I cleaned and analyzed the review data and created
+                            meaningful categories and visualizations to reveal
+                            rating trends, customer sentiment, review length
+                            patterns and country-level performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TECHNOLOGIES
+        ========================= -->
+
+        <section class="technology-section">
+
+            <div class="case-container">
+
+                <div class="technology-head">
+
+                    <span class="section-label">
+                        Tools & Technologies
+                    </span>
+
+                    <h2>
+                        Built with modern
+                        analytics tools.
+                    </h2>
+
+                    <p>
+                        A combination of data preparation, analysis and
+                        visualization tools was used to turn raw customer
+                        feedback into an interactive analytical experience.
+                    </p>
+
+                </div>
+
+
+                <div class="technologies">
+
+                    <span class="tech">Power BI</span>
+
+                    <span class="tech">DAX</span>
+
+                    <span class="tech">Power Query</span>
+
+                    <span class="tech">Excel</span>
+
+                    <span class="tech">Data Cleaning</span>
+
+                    <span class="tech">Data Visualization</span>
+
+                    <span class="tech">Sentiment Analysis</span>
+
+                    <span class="tech">Customer Analytics</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HIGHLIGHTS
+        ========================= -->
+
+        <section class="highlights">
+
+            <div class="case-container">
+
+                <h2>
+                    Project Highlights
+                </h2>
+
+                <div class="highlight-grid">
+
+                    <div class="highlight-card">
+
+                        <div class="highlight-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Rating Intelligence
+                        </h3>
+
+                        <p>
+                            Analyzed star ratings to understand overall
+                            customer satisfaction and rating distribution.
+                        </p>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <div class="highlight-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Sentiment Analysis
+                        </h3>
+
+                        <p>
+                            Classified customer feedback into meaningful
+                            positive and negative categories for easier
+                            interpretation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <div class="highlight-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Country Analysis
+                        </h3>
+
+                        <p>
+                            Compared customer ratings across countries to
+                            identify geographical differences in feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCREENSHOTS
+        ========================= -->
+
+        <section class="screenshots">
+
+            <div class="case-container">
+
+                <div class="screenshots-head">
+
+                    <div>
+
+                        <span class="section-label">
+                            Visual Preview
+                        </span>
+
+                        <h2>
+                            Project Screenshots
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        A visual preview of the customer review analytics
+                        dashboard and its data visualization components.
+                    </p>
+
+                </div>
+
+
+                <div class="screenshot-grid">
+
+                    <div class="screenshot-card">
+
+                        <img
+                            src="../assets/Customer Review.png"
+                            alt="Customer Review Dashboard">
+
+                    </div>
+
+                    <!-- Add another screenshot here if available -->
+
+                    <!--
+                    <div class="screenshot-card">
+
+                        <img
+                            src="../assets/customer-review-2.png"
+                            alt="Customer Review Analytics">
+
+                    </div>
+                    -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================= -->
+
+        <section class="case-cta">
+
+            <div class="case-container">
+
+                <h2>
+                    Have a data project in mind?
+                </h2>
+
+                <p>
+                    Let's turn your raw data into clear dashboards,
+                    meaningful insights and better business decisions.
+                </p>
+
+
+                <div class="case-actions">
+
+                    <a href="#" class="case-btn" target="_blank">
+                        View Project →
+                    </a>
+
+                    <a
+                        href="../index.html#contact"
+                        class="case-btn secondary">
+                        Start a Project →
+                    </a>
+
+                    <a
+                        href="../index.html#portfolio"
+                        class="case-btn secondary">
+                        ← Back to Portfolio
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+```

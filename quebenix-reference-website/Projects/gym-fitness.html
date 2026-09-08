@@ -1,0 +1,1506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gym Fitness App | Case Study</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: #f7fafc;
+            color: #102337;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .case-container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .case-hero {
+            position: relative;
+            overflow: hidden;
+
+            padding: 250px 60px 200px;
+
+            color: #fff;
+
+            background:
+                radial-gradient(circle at 80% 20%,
+                    rgba(32, 199, 255, .16),
+                    transparent 28%),
+                radial-gradient(circle at 15% 80%,
+                    rgba(7, 156, 255, .12),
+                    transparent 25%),
+                linear-gradient(135deg,
+                    #03111e,
+                    #061d31 55%,
+                    #03111e);
+        }
+
+        .case-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 500px;
+
+            right: -180px;
+            top: -180px;
+
+            border: 1px solid rgba(32, 199, 255, .12);
+            border-radius: 50%;
+        }
+
+        .case-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            left: -160px;
+            bottom: -160px;
+
+            border: 1px solid rgba(7, 156, 255, .08);
+            border-radius: 50%;
+        }
+
+        .case-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .case-label {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 14px;
+
+            border: 1px solid rgba(32, 199, 255, .35);
+
+            background: rgba(32, 199, 255, .08);
+
+            border-radius: 30px;
+
+            color: #5bcaff;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: .8px;
+            text-transform: uppercase;
+        }
+
+        .case-label span {
+            width: 7px;
+            height: 7px;
+
+            background: #20c7ff;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 12px #20c7ff;
+        }
+
+        .case-hero h1 {
+            max-width: 850px;
+
+            margin: 25px 0 22px;
+
+            font-size: clamp(42px, 6vw, 76px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+        }
+
+        .case-hero h1 span {
+            color: #20c7ff;
+        }
+
+        .case-description {
+            max-width: 720px;
+
+            margin: 0 0 35px;
+
+            color: #9db3c4;
+
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .meta-card {
+            min-width: 145px;
+
+            padding: 15px 18px;
+
+            background: rgba(255, 255, 255, .035);
+
+            border: 1px solid rgba(255, 255, 255, .08);
+
+            border-radius: 10px;
+        }
+
+        .meta-card small {
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #6f8798;
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .meta-card strong {
+            color: #fff;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           SHOWCASE
+        ========================== */
+
+        .showcase-section {
+            padding: 80px 20px 30px;
+
+            background: #f7fafc;
+        }
+
+        .showcase-frame {
+            width: min(1050px, 94%);
+
+            margin: auto;
+
+            padding: 10px;
+
+            background: linear-gradient(145deg,
+                    #0b3149,
+                    #061827);
+
+            border: 1px solid #16435e;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 30px 80px rgba(3, 17, 30, .18),
+                0 0 60px rgba(7, 156, 255, .08);
+        }
+
+        .showcase-inner {
+            position: relative;
+
+            overflow: hidden;
+
+            background: #071a29;
+
+            border-radius: 13px;
+        }
+
+        .showcase-inner::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            z-index: 1;
+
+            pointer-events: none;
+
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, .04),
+                    transparent 25%);
+        }
+
+        .showcase-image {
+            width: 100%;
+            height: 570px;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================
+           OVERVIEW
+        ========================== */
+
+        .overview {
+            padding: 85px 20px;
+
+            background: #fff;
+        }
+
+        .overview-grid {
+            width: min(1160px, 92%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr .8fr;
+
+            gap: 60px;
+        }
+
+        .section-kicker {
+            margin-bottom: 12px;
+
+            color: #079cff;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        .overview h2,
+        .challenge-section h2,
+        .technology-section h2,
+        .screenshots h2 {
+            margin: 0 0 18px;
+
+            color: #082238;
+
+            font-size: clamp(30px, 4vw, 46px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+        }
+
+        .overview-main p {
+            margin: 0 0 18px;
+
+            color: #667d8d;
+
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .info-stack {
+            display: grid;
+            gap: 12px;
+        }
+
+        .info-card {
+            padding: 20px;
+
+            background: #f8fbfd;
+
+            border: 1px solid #dbe7ef;
+
+            border-radius: 12px;
+
+            transition: .3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+
+            border-color: #8fdcff;
+
+            box-shadow: 0 12px 30px rgba(7, 156, 255, .07);
+        }
+
+        .info-card small {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #079cff;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        .info-card strong {
+            color: #102337;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROBLEM & SOLUTION
+        ========================== */
+
+        .challenge-section {
+            padding: 85px 20px;
+
+            background: #f7fafc;
+        }
+
+        .challenge-container {
+            width: min(1160px, 92%);
+
+            margin: auto;
+        }
+
+        .challenge-intro {
+            max-width: 680px;
+
+            margin-bottom: 40px;
+        }
+
+        .challenge-intro p {
+            color: #718496;
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .challenge-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .challenge-card {
+            padding: 32px;
+
+            background: #fff;
+
+            border: 1px solid #dbe7ef;
+
+            border-radius: 14px;
+
+            transition: .3s ease;
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #8fdcff;
+
+            box-shadow:
+                0 15px 40px rgba(7, 156, 255, .08);
+        }
+
+        .challenge-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            background: #eaf8ff;
+
+            border-radius: 11px;
+
+            color: #079cff;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .challenge-card h3 {
+            margin: 0 0 12px;
+
+            color: #102337;
+
+            font-size: 18px;
+        }
+
+        .challenge-card p {
+            margin: 0;
+
+            color: #718496;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           TECHNOLOGY
+        ========================== */
+
+        .technology-section {
+            padding: 85px 20px;
+
+            background: #fff;
+        }
+
+        .technology-container {
+            width: min(1160px, 92%);
+
+            margin: auto;
+        }
+
+        .technology-head {
+            max-width: 650px;
+
+            margin-bottom: 35px;
+        }
+
+        .technology-head p {
+            color: #718496;
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .technologies {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .tech {
+            padding: 13px 18px;
+
+            background: #f3f8fb;
+
+            border: 1px solid #dbe7ef;
+
+            border-radius: 9px;
+
+            color: #15344b;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: .3s ease;
+        }
+
+        .tech:hover {
+            transform: translateY(-3px);
+
+            border-color: #8fdcff;
+
+            background: #eaf8ff;
+        }
+
+
+        /* =========================
+           HIGHLIGHTS
+        ========================== */
+
+        .highlights {
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(135deg,
+                    #03111e,
+                    #07263e);
+
+            color: #fff;
+        }
+
+        .highlight-container {
+            width: min(1160px, 92%);
+
+            margin: auto;
+        }
+
+        .highlight-container > .section-kicker {
+            color: #5bcaff;
+        }
+
+        .highlight-container > h2 {
+            margin: 0 0 38px;
+
+            color: #fff;
+
+            font-size: clamp(30px, 4vw, 44px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+        }
+
+        .highlight-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .highlight-card {
+            padding: 30px;
+
+            background: rgba(255, 255, 255, .035);
+
+            border: 1px solid #16435e;
+
+            border-radius: 14px;
+
+            transition: .3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #20c7ff;
+        }
+
+        .highlight-card strong {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #20c7ff;
+
+            font-size: 14px;
+        }
+
+        .highlight-card p {
+            margin: 0;
+
+            color: #8fa7b8;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           SCREENSHOTS
+        ========================== */
+
+        .screenshots {
+            padding: 85px 20px;
+
+            background: #f7fafc;
+        }
+
+        .screenshots-container {
+            width: min(1160px, 92%);
+
+            margin: auto;
+        }
+
+        .screenshots-head {
+            margin-bottom: 35px;
+        }
+
+        .screenshots-head p {
+            color: #718496;
+
+            font-size: 14px;
+        }
+
+        .screenshot-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .screenshot-card {
+            overflow: hidden;
+
+            background: #fff;
+
+            border: 1px solid #dbe7ef;
+
+            border-radius: 14px;
+
+            transition: .3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 40px rgba(7, 156, 255, .08);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: 300px;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+        .screenshot-card div {
+            padding: 17px 20px;
+        }
+
+        .screenshot-card strong {
+            color: #102337;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .case-cta {
+            padding: 85px 20px;
+
+            background: #fff;
+        }
+
+        .cta-box {
+            width: min(1050px, 92%);
+
+            margin: auto;
+
+            padding: 65px 30px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(circle at 50% 0%,
+                    rgba(32, 199, 255, .14),
+                    transparent 40%),
+                #061a2a;
+
+            border: 1px solid #16435e;
+
+            border-radius: 20px;
+
+            color: #fff;
+        }
+
+        .cta-box .section-kicker {
+            color: #5bcaff;
+        }
+
+        .cta-box h2 {
+            max-width: 650px;
+
+            margin: 0 auto 15px;
+
+            font-size: clamp(30px, 4vw, 48px);
+
+            letter-spacing: -1.5px;
+        }
+
+        .cta-box p {
+            max-width: 570px;
+
+            margin: 0 auto 28px;
+
+            color: #8fa7b8;
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .case-actions {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 21px;
+
+            border-radius: 8px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            transition: .25s ease;
+        }
+
+        .btn.blue {
+            background: #079cff;
+
+            color: #fff;
+        }
+
+        .btn.blue:hover {
+            background: #20c7ff;
+
+            transform: translateY(-2px);
+        }
+
+        .btn.outline {
+            border: 1px solid #2a536c;
+
+            color: #fff;
+        }
+
+        .btn.outline:hover {
+            border-color: #20c7ff;
+
+            color: #20c7ff;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .challenge-grid,
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-image {
+                height: 450px;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .case-hero {
+                padding: 80px 20px 65px;
+            }
+
+            .case-hero h1 {
+                font-size: 43px;
+
+                letter-spacing: -2px;
+            }
+
+            .case-description {
+                font-size: 14px;
+            }
+
+            .meta-card {
+                flex: 1 1 140px;
+            }
+
+            .showcase-section,
+            .overview,
+            .challenge-section,
+            .technology-section,
+            .highlights,
+            .screenshots,
+            .case-cta {
+                padding-top: 60px;
+
+                padding-bottom: 60px;
+            }
+
+            .showcase-image {
+                height: 330px;
+            }
+
+            .challenge-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-card img {
+                height: 250px;
+            }
+
+            .cta-box {
+                padding: 50px 20px;
+            }
+
+            .case-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="case-hero">
+
+        <div class="case-container">
+
+            <div class="case-hero-content">
+
+                <div class="case-label">
+                    <span></span>
+                    Mobile App
+                </div>
+
+
+                <h1>
+                    Gym <span>Fitness</span> App
+                </h1>
+
+
+                <p class="case-description">
+
+                    A modern fitness mobile application designed to help
+                    users manage workouts, track fitness activities, and
+                    maintain a consistent and healthier lifestyle.
+
+                </p>
+
+
+                <div class="hero-meta">
+
+                    <div class="meta-card">
+                        <small>Role</small>
+
+                        <strong>
+                            Flutter Developer
+                        </strong>
+                    </div>
+
+
+                    <div class="meta-card">
+                        <small>Status</small>
+
+                        <strong>
+                            Completed
+                        </strong>
+                    </div>
+
+
+                    <div class="meta-card">
+                        <small>Type</small>
+
+                        <strong>
+                            Mobile Application
+                        </strong>
+                    </div>
+
+
+                    <div class="meta-card">
+                        <small>Focus</small>
+
+                        <strong>
+                            Fitness Management
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SHOWCASE
+    ========================== -->
+
+    <section class="showcase-section">
+
+        <div class="showcase-frame">
+
+            <div class="showcase-inner">
+
+                <img
+                    src="../assets/Gym.jpg"
+                    alt="Gym Fitness Mobile Application"
+                    class="showcase-image">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECT OVERVIEW
+    ========================== -->
+
+    <section class="overview">
+
+        <div class="overview-grid">
+
+
+            <div class="overview-main">
+
+                <div class="section-kicker">
+                    Project Overview
+                </div>
+
+
+                <h2>
+                    Fitness made
+                    <br>
+                    simple and accessible.
+                </h2>
+
+
+                <p>
+
+                    The Gym Fitness App was developed to provide users
+                    with a simple and engaging platform for managing
+                    their daily fitness activities.
+
+                </p>
+
+
+                <p>
+
+                    The application focuses on making workout tracking
+                    easier, presenting fitness information clearly,
+                    and providing a smooth mobile experience for users
+                    who want to stay consistent with their fitness goals.
+
+                </p>
+
+
+                <p>
+
+                    The interface was designed with a clean and modern
+                    approach so users can quickly navigate through
+                    different fitness features without unnecessary
+                    complexity.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="info-stack">
+
+                <div class="info-card">
+
+                    <small>
+                        Project Type
+                    </small>
+
+                    <strong>
+                        Fitness Mobile App
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <small>
+                        Platform
+                    </small>
+
+                    <strong>
+                        Android / Mobile
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <small>
+                        Development
+                    </small>
+
+                    <strong>
+                        Cross-Platform
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <small>
+                        Primary Goal
+                    </small>
+
+                    <strong>
+                        Fitness & Workout Management
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROBLEM & SOLUTION
+    ========================== -->
+
+    <section class="challenge-section">
+
+        <div class="challenge-container">
+
+
+            <div class="challenge-intro">
+
+                <div class="section-kicker">
+                    Problem & Solution
+                </div>
+
+
+                <h2>
+                    From fitness challenges
+                    <br>
+                    to a better digital experience.
+                </h2>
+
+
+                <p>
+
+                    The goal was to create a simple and user-friendly
+                    mobile experience for managing workouts and fitness
+                    activities.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="challenge-grid">
+
+
+                <div class="challenge-card">
+
+                    <div class="challenge-icon">
+                        01
+                    </div>
+
+
+                    <h3>
+                        The Problem
+                    </h3>
+
+
+                    <p>
+
+                        Many users struggle to keep their workout
+                        routines, exercises, and fitness activities
+                        organized. Managing fitness information
+                        manually can make it difficult to stay
+                        consistent and keep track of daily workouts.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="challenge-card">
+
+                    <div class="challenge-icon">
+                        02
+                    </div>
+
+
+                    <h3>
+                        The Solution
+                    </h3>
+
+
+                    <p>
+
+                        A dedicated mobile fitness application was
+                        developed to organize workout-related
+                        information in one place. The clean and
+                        user-friendly interface makes it easier for
+                        users to manage their routines, access
+                        fitness information, and stay consistent
+                        with their goals.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TECHNOLOGIES
+    ========================== -->
+
+    <section class="technology-section">
+
+        <div class="technology-container">
+
+
+            <div class="technology-head">
+
+                <div class="section-kicker">
+                    Technologies
+                </div>
+
+
+                <h2>
+                    Built with modern
+                    <br>
+                    mobile technologies.
+                </h2>
+
+
+                <p>
+
+                    The application was developed using a modern
+                    mobile development stack focused on performance,
+                    scalability and maintainability.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="technologies">
+
+                <div class="tech">
+                    Flutter
+                </div>
+
+                <div class="tech">
+                    Dart
+                </div>
+
+                <div class="tech">
+                    Firebase
+                </div>
+
+                <div class="tech">
+                    Firebase Authentication
+                </div>
+
+                <div class="tech">
+                    Cloud Firestore
+                </div>
+
+                <div class="tech">
+                    GetX
+                </div>
+
+                <div class="tech">
+                    Responsive UI
+                </div>
+
+                <div class="tech">
+                    Mobile Development
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         KEY HIGHLIGHTS
+    ========================== -->
+
+    <section class="highlights">
+
+        <div class="highlight-container">
+
+
+            <div class="section-kicker">
+                Key Highlights
+            </div>
+
+
+            <h2>
+                Designed around
+                <br>
+                the user experience.
+            </h2>
+
+
+
+            <div class="highlight-grid">
+
+
+                <div class="highlight-card">
+
+                    <strong>
+                        01 — Fitness Tracking
+                    </strong>
+
+
+                    <p>
+
+                        Users can keep their fitness activities
+                        and workout information organized in
+                        one place.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="highlight-card">
+
+                    <strong>
+                        02 — Clean Interface
+                    </strong>
+
+
+                    <p>
+
+                        A modern interface keeps important
+                        information easy to understand and
+                        simple to access.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="highlight-card">
+
+                    <strong>
+                        03 — Smooth Experience
+                    </strong>
+
+
+                    <p>
+
+                        Flutter and GetX were used to create
+                        a responsive and efficient mobile
+                        application experience.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCREENSHOTS
+    ========================== -->
+
+    <section class="screenshots">
+
+        <div class="screenshots-container">
+
+
+            <div class="screenshots-head">
+
+                <div class="section-kicker">
+                    Project Preview
+                </div>
+
+
+                <h2>
+                    Gym fitness
+                    <br>
+                    application interface.
+                </h2>
+
+
+                <p>
+                    A visual preview of the Gym Fitness mobile application.
+                </p>
+
+            </div>
+
+
+
+            <div class="screenshot-grid">
+
+
+                <div class="screenshot-card">
+
+                    <img
+                        src="../assets/Gym.jpg"
+                        alt="Gym Fitness App Interface">
+
+                    <div>
+
+                        <strong>
+                            Fitness App Interface
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="screenshot-card">
+
+                    <img
+                        src="../assets/Gym.jpg"
+                        alt="Gym Fitness Mobile Application">
+
+                    <div>
+
+                        <strong>
+                            Mobile Application Preview
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="case-cta">
+
+        <div class="cta-box">
+
+
+            <div class="section-kicker">
+                Start Your Project
+            </div>
+
+
+            <h2>
+                Have a mobile project in mind?
+            </h2>
+
+
+            <p>
+
+                Let's build a modern, reliable and user-focused
+                mobile application that turns your idea into
+                a real product.
+
+            </p>
+
+
+
+            <div class="case-actions">
+
+
+                <a
+                    href="../index.html#contact"
+                    class="btn blue">
+
+                    Start a Project →
+
+                </a>
+
+
+                <a
+                    href="../index.html#portfolio"
+                    class="btn outline">
+
+                    ← Back to Portfolio
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
+```
