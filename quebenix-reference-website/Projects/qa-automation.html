@@ -2,88 +2,72 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>QA Automation Suite | Case Study</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
 
     <style>
-        * {
-            box-sizing: border-box;
+
+        /* =========================================
+           CASE PAGE
+        ========================================= */
+
+        .case-page {
+            overflow: hidden;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            margin: 0;
-            font-family: Inter, Arial, sans-serif;
-            background: #f7fafc;
-            color: #102337;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .case-container {
-            width: min(1160px, 92%);
-            margin: auto;
-        }
-
-        /* =========================
+        /* =========================================
            HERO
-        ========================== */
+        ========================================= */
 
         .case-hero {
             position: relative;
-            overflow: hidden;
 
-            padding: 110px 20px 90px;
-
-            color: #fff;
+            padding: 125px 0 90px;
 
             background:
-                radial-gradient(circle at 80% 20%,
-                    rgba(32, 199, 255, .16),
-                    transparent 28%),
-                radial-gradient(circle at 15% 80%,
-                    rgba(7, 156, 255, .12),
-                    transparent 25%),
-                linear-gradient(135deg,
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(7, 156, 255, .20),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(32, 199, 255, .12),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
                     #03111e,
-                    #061d31 55%,
-                    #03111e);
+                    #06243b 55%,
+                    #03111e
+                );
+
+            color: #fff;
         }
+
 
         .case-hero::before {
             content: "";
 
             position: absolute;
 
-            width: 450px;
-            height: 450px;
-
-            right: -180px;
-            top: -180px;
+            width: 500px;
+            height: 500px;
 
             border: 1px solid rgba(32, 199, 255, .12);
 
             border-radius: 50%;
+
+            right: -180px;
+            top: -180px;
         }
+
 
         .case-hero::after {
             content: "";
@@ -93,42 +77,84 @@
             width: 300px;
             height: 300px;
 
-            left: -160px;
-            bottom: -160px;
-
             border: 1px solid rgba(7, 156, 255, .08);
 
             border-radius: 50%;
+
+            left: -170px;
+            bottom: -170px;
         }
 
-        .case-hero-content {
+
+        .case-container {
+            width: min(1120px, 92%);
+
+            margin: auto;
+
             position: relative;
+
             z-index: 2;
         }
+
+
+        /* =========================================
+           BACK BUTTON
+        ========================================= */
+
+        .back-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #5bcaff;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 45px;
+
+            transition: .3s ease;
+        }
+
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+
+        /* =========================================
+           LABEL
+        ========================================= */
 
         .case-label {
             display: inline-flex;
 
             align-items: center;
+
             gap: 9px;
 
             padding: 8px 14px;
 
-            border: 1px solid rgba(32, 199, 255, .35);
-
-            background: rgba(32, 199, 255, .08);
+            border: 1px solid rgba(91, 202, 255, .3);
 
             border-radius: 30px;
 
+            background: rgba(7, 156, 255, .08);
+
             color: #5bcaff;
 
-            font-size: 11px;
+            font-size: 12px;
+
             font-weight: 700;
 
-            letter-spacing: .8px;
+            letter-spacing: 1px;
 
             text-transform: uppercase;
         }
+
 
         .case-label span {
             width: 7px;
@@ -141,130 +167,127 @@
             box-shadow: 0 0 12px #20c7ff;
         }
 
-        .case-hero h1 {
-            max-width: 850px;
 
-            margin: 25px 0 22px;
+        /* =========================================
+           TITLE
+        ========================================= */
 
-            font-size: clamp(42px, 6vw, 76px);
+        .case-title {
+            max-width: 900px;
 
-            line-height: 1.02;
+            margin-top: 25px;
+        }
+
+
+        .case-title h1 {
+            margin: 0;
+
+            font-size: clamp(45px, 7vw, 82px);
+
+            line-height: .98;
 
             letter-spacing: -3px;
         }
 
-        .case-hero h1 span {
+
+        .case-title h1 span {
             color: #20c7ff;
         }
+
+
+        /* =========================================
+           DESCRIPTION
+        ========================================= */
 
         .case-description {
             max-width: 720px;
 
-            margin: 0 0 35px;
+            margin-top: 28px;
 
-            color: #9db3c4;
+            color: #a9c0d1;
 
-            font-size: 17px;
+            font-size: 18px;
 
             line-height: 1.8;
         }
+
+
+        /* =========================================
+           HERO META
+        ========================================= */
 
         .hero-meta {
             display: flex;
 
             flex-wrap: wrap;
 
-            gap: 12px;
+            gap: 45px;
+
+            margin-top: 45px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid rgba(255, 255, 255, .12);
         }
 
-        .meta-card {
-            min-width: 145px;
 
-            padding: 15px 18px;
-
-            background: rgba(255, 255, 255, .035);
-
-            border: 1px solid rgba(255, 255, 255, .08);
-
-            border-radius: 10px;
-        }
-
-        .meta-card small {
+        .meta-item small {
             display: block;
 
             margin-bottom: 6px;
 
-            color: #6f8798;
+            color: #718b9d;
 
-            font-size: 9px;
-
-            letter-spacing: 1px;
+            font-size: 11px;
 
             text-transform: uppercase;
+
+            letter-spacing: 1px;
         }
 
-        .meta-card strong {
+
+        .meta-item strong {
             color: #fff;
 
-            font-size: 13px;
+            font-size: 14px;
         }
 
 
-        /* =========================
+        /* =========================================
            SHOWCASE
-        ========================== */
+        ========================================= */
 
         .showcase-section {
-            padding: 80px 20px 30px;
+            margin-top: -50px;
 
-            background: #f7fafc;
+            position: relative;
+
+            z-index: 5;
         }
 
+
         .showcase-frame {
-            width: min(1050px, 94%);
-
-            margin: auto;
-
             padding: 10px;
 
-            background: linear-gradient(145deg,
-                    #0b3149,
-                    #061827);
+            background: rgba(255, 255, 255, .08);
 
-            border: 1px solid #16435e;
+            border: 1px solid rgba(255, 255, 255, .15);
 
             border-radius: 20px;
 
             box-shadow:
-                0 30px 80px rgba(3, 17, 30, .18),
-                0 0 60px rgba(7, 156, 255, .08);
+                0 30px 80px rgba(0, 0, 0, .30);
         }
+
 
         .showcase-inner {
-            position: relative;
-
             overflow: hidden;
 
-            background: #071a29;
+            border-radius: 14px;
 
-            border-radius: 13px;
+            background: #fff;
         }
 
-        .showcase-inner::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: 1;
-
-            pointer-events: none;
-
-            background: linear-gradient(180deg,
-                    rgba(255, 255, 255, .04),
-                    transparent 25%);
-        }
 
         .showcase-image {
             width: 100%;
@@ -277,34 +300,30 @@
         }
 
 
-        /* =========================
+        /* =========================================
            OVERVIEW
-        ========================== */
+        ========================================= */
 
         .overview {
-            padding: 85px 20px;
-
-            background: #fff;
+            padding: 100px 0 70px;
         }
 
+
         .overview-grid {
-            width: min(1160px, 92%);
-
-            margin: auto;
-
             display: grid;
 
             grid-template-columns: 1.5fr .8fr;
 
             gap: 60px;
+
+            align-items: start;
         }
 
-        .section-kicker {
-            margin-bottom: 12px;
 
-            color: #079cff;
+        .section-label {
+            color: #168cff;
 
-            font-size: 10px;
+            font-size: 12px;
 
             font-weight: 800;
 
@@ -313,130 +332,148 @@
             text-transform: uppercase;
         }
 
-        .overview h2,
-        .challenge-section h2,
-        .technology-section h2,
-        .screenshots h2 {
 
-            margin: 0 0 18px;
-
-            color: #082238;
-
-            font-size: clamp(30px, 4vw, 46px);
+        .overview-main h2 {
+            font-size: clamp(32px, 5vw, 52px);
 
             line-height: 1.1;
 
-            letter-spacing: -1.5px;
+            margin: 12px 0 20px;
+
+            color: #102337;
         }
+
+
+        .overview-main h2 span {
+            color: #168cff;
+        }
+
 
         .overview-main p {
-            margin: 0 0 18px;
+            color: #64748b;
 
-            color: #667d8d;
-
-            font-size: 15px;
+            font-size: 16px;
 
             line-height: 1.9;
+
+            max-width: 700px;
         }
+
+
+        /* =========================================
+           INFO CARDS
+        ========================================= */
 
         .info-stack {
             display: grid;
 
-            gap: 12px;
+            gap: 15px;
         }
 
+
         .info-card {
-            padding: 20px;
+            padding: 22px;
 
-            background: #f8fbfd;
+            background: #fff;
 
-            border: 1px solid #dbe7ef;
+            border: 1px solid #e1eaf0;
 
-            border-radius: 12px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 30px rgba(16, 35, 55, .05);
 
             transition: .3s ease;
         }
+
 
         .info-card:hover {
             transform: translateY(-4px);
 
             border-color: #8fdcff;
 
-            box-shadow: 0 12px 30px rgba(7, 156, 255, .07);
+            box-shadow:
+                0 15px 35px rgba(7, 156, 255, .08);
         }
+
 
         .info-card small {
             display: block;
 
+            color: #718496;
+
             margin-bottom: 7px;
 
-            color: #079cff;
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
+            font-size: 11px;
 
             text-transform: uppercase;
         }
 
-        .info-card strong {
-            color: #102337;
 
-            font-size: 14px;
+        .info-card strong {
+            font-size: 15px;
+
+            color: #102337;
         }
 
 
-        /* =========================
-           PROBLEM & SOLUTION
-        ========================== */
+        /* =========================================
+           CHALLENGE
+        ========================================= */
 
         .challenge-section {
-            padding: 85px 20px;
+            padding: 80px 0;
 
-            background: #f7fafc;
+            background: #f0f6fa;
         }
 
-        .challenge-container {
-            width: min(1160px, 92%);
 
-            margin: auto;
+        .challenge-head {
+            margin-bottom: 35px;
         }
 
-        .challenge-intro {
-            max-width: 680px;
 
-            margin-bottom: 40px;
+        .challenge-head h2 {
+            font-size: 40px;
+
+            margin: 10px 0;
         }
 
-        .challenge-intro p {
+
+        .challenge-head p {
+            max-width: 700px;
+
             color: #718496;
-
-            font-size: 15px;
 
             line-height: 1.8;
         }
 
+
         .challenge-grid {
             display: grid;
 
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
 
-            gap: 18px;
+            gap: 25px;
         }
 
+
         .challenge-card {
-            padding: 32px;
+            position: relative;
+
+            padding: 35px;
+
+            border-radius: 20px;
 
             background: #fff;
 
-            border: 1px solid #dbe7ef;
+            border: 1px solid #dfe9ef;
 
-            border-radius: 14px;
+            overflow: hidden;
 
             transition: .3s ease;
         }
+
 
         .challenge-card:hover {
             transform: translateY(-5px);
@@ -447,6 +484,24 @@
                 0 15px 40px rgba(7, 156, 255, .08);
         }
 
+
+        .challenge-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            right: -70px;
+            bottom: -70px;
+
+            background: rgba(7, 156, 255, .06);
+        }
+
+
         .challenge-icon {
             width: 45px;
             height: 45px;
@@ -456,318 +511,315 @@
             align-items: center;
             justify-content: center;
 
-            margin-bottom: 20px;
+            border-radius: 12px;
 
-            background: #eaf8ff;
+            background: #eaf7ff;
 
-            border-radius: 11px;
-
-            color: #079cff;
-
-            font-size: 12px;
+            color: #168cff;
 
             font-weight: 800;
+
+            margin-bottom: 22px;
         }
+
 
         .challenge-card h3 {
+            font-size: 22px;
+
             margin: 0 0 12px;
-
-            color: #102337;
-
-            font-size: 18px;
         }
+
 
         .challenge-card p {
-            margin: 0;
-
-            color: #718496;
-
-            font-size: 14px;
+            color: #64748b;
 
             line-height: 1.8;
+
+            margin: 0;
         }
 
 
-        /* =========================
-           TECHNOLOGY
-        ========================== */
+        /* =========================================
+           TECHNOLOGIES
+        ========================================= */
 
         .technology-section {
-            padding: 85px 20px;
+            padding: 90px 0;
 
             background: #fff;
         }
 
-        .technology-container {
-            width: min(1160px, 92%);
+
+        .technology-head {
+            text-align: center;
+
+            max-width: 650px;
 
             margin: auto;
         }
 
-        .technology-head {
-            max-width: 650px;
 
-            margin-bottom: 35px;
+        .technology-head h2 {
+            font-size: 40px;
+
+            margin: 10px 0 15px;
         }
+
 
         .technology-head p {
             color: #718496;
 
-            font-size: 15px;
-
             line-height: 1.8;
         }
+
 
         .technologies {
             display: flex;
 
+            justify-content: center;
+
             flex-wrap: wrap;
 
             gap: 12px;
+
+            margin-top: 35px;
         }
 
+
         .tech {
-            padding: 13px 18px;
+            padding: 11px 18px;
 
-            background: #f3f8fb;
+            border-radius: 30px;
 
-            border: 1px solid #dbe7ef;
+            background: #eef7ff;
 
-            border-radius: 9px;
+            border: 1px solid #d7edfb;
 
-            color: #15344b;
+            color: #168cff;
 
-            font-size: 12px;
+            font-size: 13px;
 
             font-weight: 700;
 
             transition: .3s ease;
         }
 
+
         .tech:hover {
             transform: translateY(-3px);
 
-            border-color: #8fdcff;
-
-            background: #eaf8ff;
+            background: #e1f3ff;
         }
 
 
-        /* =========================
+        /* =========================================
            HIGHLIGHTS
-        ========================== */
+        ========================================= */
 
         .highlights {
-            padding: 80px 20px;
+            padding: 75px 0;
 
-            background:
-                linear-gradient(135deg,
-                    #03111e,
-                    #07263e);
+            background: #03111e;
 
             color: #fff;
         }
 
-        .highlight-container {
-            width: min(1160px, 92%);
 
-            margin: auto;
+        .highlights h2 {
+            text-align: center;
+
+            font-size: 38px;
+
+            margin: 0 0 40px;
         }
 
-        .highlight-container > .section-kicker {
-            color: #5bcaff;
-        }
-
-        .highlight-container > h2 {
-            margin: 0 0 38px;
-
-            color: #fff;
-
-            font-size: clamp(30px, 4vw, 44px);
-
-            line-height: 1.1;
-
-            letter-spacing: -1.5px;
-        }
 
         .highlight-grid {
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
 
-            gap: 15px;
+            gap: 20px;
         }
+
 
         .highlight-card {
             padding: 30px;
 
-            background: rgba(255, 255, 255, .035);
-
             border: 1px solid #16435e;
 
-            border-radius: 14px;
+            border-radius: 17px;
+
+            background: #082238;
 
             transition: .3s ease;
         }
 
-        .highlight-card:hover {
-            transform: translateY(-5px);
 
-            border-color: #20c7ff;
+        .highlight-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #168cff;
         }
 
-        .highlight-card strong {
-            display: block;
 
-            margin-bottom: 10px;
+        .highlight-number {
+            font-size: 32px;
 
             color: #20c7ff;
 
-            font-size: 14px;
+            font-weight: 800;
         }
+
+
+        .highlight-card h3 {
+            font-size: 18px;
+
+            margin: 12px 0 8px;
+        }
+
 
         .highlight-card p {
-            margin: 0;
+            color: #8da5b7;
 
-            color: #8fa7b8;
-
-            font-size: 13px;
+            font-size: 14px;
 
             line-height: 1.7;
+
+            margin: 0;
         }
 
 
-        /* =========================
+        /* =========================================
            SCREENSHOTS
-        ========================== */
+        ========================================= */
 
         .screenshots {
-            padding: 85px 20px;
+            padding: 100px 0;
 
             background: #f7fafc;
         }
 
-        .screenshots-container {
-            width: min(1160px, 92%);
-
-            margin: auto;
-        }
 
         .screenshots-head {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 30px;
+
             margin-bottom: 35px;
         }
+
+
+        .screenshots-head h2 {
+            font-size: 40px;
+
+            margin: 10px 0 0;
+        }
+
 
         .screenshots-head p {
             color: #718496;
 
-            font-size: 14px;
+            max-width: 420px;
+
+            line-height: 1.7;
         }
+
 
         .screenshot-grid {
             display: grid;
 
             grid-template-columns: repeat(2, 1fr);
 
-            gap: 18px;
+            gap: 25px;
         }
 
+
         .screenshot-card {
-            overflow: hidden;
+            padding: 8px;
 
             background: #fff;
 
-            border: 1px solid #dbe7ef;
+            border: 1px solid #dce7ee;
 
-            border-radius: 14px;
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px rgba(16, 35, 55, .08);
+
+            overflow: hidden;
 
             transition: .3s ease;
         }
 
+
         .screenshot-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
 
             box-shadow:
-                0 15px 40px rgba(7, 156, 255, .08);
+                0 22px 50px rgba(16, 35, 55, .13);
         }
+
 
         .screenshot-card img {
             width: 100%;
 
-            height: 300px;
+            height: 350px;
 
             display: block;
 
             object-fit: cover;
-        }
 
-        .screenshot-card div {
-            padding: 17px 20px;
-        }
-
-        .screenshot-card strong {
-            color: #102337;
-
-            font-size: 13px;
+            border-radius: 12px;
         }
 
 
-        /* =========================
+        /* =========================================
            CTA
-        ========================== */
+        ========================================= */
 
         .case-cta {
-            padding: 85px 20px;
+            padding: 80px 0;
 
-            background: #fff;
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(32, 199, 255, .16),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #06243b,
+                    #03111e
+                );
+
+            color: #fff;
+
+            text-align: center;
         }
 
-        .cta-box {
-            width: min(1050px, 92%);
+
+        .case-cta h2 {
+            font-size: clamp(32px, 5vw, 50px);
+
+            margin: 0 0 15px;
+        }
+
+
+        .case-cta p {
+            color: #9db5c6;
+
+            max-width: 600px;
 
             margin: auto;
 
-            padding: 65px 30px;
-
-            text-align: center;
-
-            background:
-                radial-gradient(circle at 50% 0%,
-                    rgba(32, 199, 255, .14),
-                    transparent 40%),
-                #061a2a;
-
-            border: 1px solid #16435e;
-
-            border-radius: 20px;
-
-            color: #fff;
+            line-height: 1.8;
         }
 
-        .cta-box .section-kicker {
-            color: #5bcaff;
-        }
-
-        .cta-box h2 {
-            max-width: 650px;
-
-            margin: 0 auto 15px;
-
-            font-size: clamp(30px, 4vw, 48px);
-
-            letter-spacing: -1.5px;
-        }
-
-        .cta-box p {
-            max-width: 570px;
-
-            margin: 0 auto 28px;
-
-            color: #8fa7b8;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
 
         .case-actions {
             display: flex;
@@ -776,56 +828,56 @@
 
             flex-wrap: wrap;
 
-            gap: 12px;
+            gap: 14px;
+
+            margin-top: 30px;
         }
 
-        .btn {
-            display: inline-flex;
 
-            align-items: center;
-            justify-content: center;
+        .case-btn {
+            display: inline-block;
 
-            padding: 13px 21px;
+            padding: 14px 25px;
 
-            border-radius: 8px;
+            border-radius: 9px;
 
-            font-size: 12px;
-
-            font-weight: 800;
-
-            transition: .25s ease;
-        }
-
-        .btn.blue {
-            background: #079cff;
+            background: #168cff;
 
             color: #fff;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: .3s ease;
         }
 
-        .btn.blue:hover {
-            background: #20c7ff;
 
-            transform: translateY(-2px);
+        .case-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(7, 156, 255, .25);
         }
 
-        .btn.outline {
-            border: 1px solid #2a536c;
 
-            color: #fff;
+        .case-btn.secondary {
+            background: transparent;
+
+            border: 1px solid #31546a;
         }
 
-        .btn.outline:hover {
+
+        .case-btn.secondary:hover {
             border-color: #20c7ff;
-
-            color: #20c7ff;
         }
 
 
-        /* =========================
+        /* =========================================
            RESPONSIVE
-        ========================== */
+        ========================================= */
 
-        @media (max-width: 900px) {
+        @media(max-width: 900px) {
 
             .overview-grid {
                 grid-template-columns: 1fr;
@@ -833,73 +885,74 @@
                 gap: 35px;
             }
 
-            .challenge-grid,
+
             .highlight-grid {
                 grid-template-columns: 1fr;
             }
 
+
+            .hero-meta {
+                gap: 25px;
+            }
+
+
             .showcase-image {
                 height: 450px;
             }
+
         }
 
 
-        @media (max-width: 650px) {
+        @media(max-width: 700px) {
 
             .case-hero {
-                padding: 80px 20px 65px;
+                padding: 105px 0 75px;
             }
 
-            .case-hero h1 {
-                font-size: 43px;
 
-                letter-spacing: -2px;
+            .case-title h1 {
+                letter-spacing: -1.5px;
             }
+
 
             .case-description {
-                font-size: 14px;
+                font-size: 16px;
             }
 
-            .meta-card {
-                flex: 1 1 140px;
+
+            .challenge-grid,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
             }
 
-            .showcase-section,
+
+            .screenshots-head {
+                display: block;
+            }
+
+
+            .screenshots-head p {
+                margin-top: 15px;
+            }
+
+
             .overview,
-            .challenge-section,
-            .technology-section,
-            .highlights,
-            .screenshots,
-            .case-cta {
-                padding-top: 60px;
-
-                padding-bottom: 60px;
+            .screenshots {
+                padding: 70px 0;
             }
+
 
             .showcase-image {
                 height: 330px;
             }
 
-            .challenge-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .screenshot-grid {
-                grid-template-columns: 1fr;
-            }
 
             .screenshot-card img {
-                height: 250px;
+                height: 300px;
             }
 
-            .cta-box {
-                padding: 50px 20px;
-            }
-
-            .case-actions .btn {
-                width: 100%;
-            }
         }
+
     </style>
 
 </head>
@@ -908,39 +961,65 @@
 <body>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <main class="case-page">
 
-    <section class="case-hero">
 
-        <div class="case-container">
+        <!-- =========================================
+             HERO
+        ========================================== -->
 
-            <div class="case-hero-content">
+        <section class="case-hero">
+
+            <div class="case-container">
+
+
+                <a
+                    href="../index.html#portfolio"
+                    class="back-btn">
+
+                    ← Back to Portfolio
+
+                </a>
+
 
                 <div class="case-label">
+
                     <span></span>
+
                     QA Testing
+
                 </div>
 
 
-                <h1>
-                    QA <span>Automation</span> Suite
-                </h1>
+                <div class="case-title">
+
+                    <h1>
+
+                        QA
+                        <span>
+                            Automation
+                        </span>
+                        Suite
+
+                    </h1>
 
 
-                <p class="case-description">
+                    <p class="case-description">
 
-                    An automated quality assurance project designed to
-                    improve software testing efficiency, reduce repetitive
-                    manual testing and identify application issues faster.
+                        An automated quality assurance project designed
+                        to improve software testing efficiency, reduce
+                        repetitive manual testing and identify
+                        application issues faster.
 
-                </p>
+                    </p>
+
+                </div>
 
 
                 <div class="hero-meta">
 
-                    <div class="meta-card">
+
+                    <div class="meta-item">
 
                         <small>
                             Role
@@ -953,7 +1032,7 @@
                     </div>
 
 
-                    <div class="meta-card">
+                    <div class="meta-item">
 
                         <small>
                             Status
@@ -966,7 +1045,7 @@
                     </div>
 
 
-                    <div class="meta-card">
+                    <div class="meta-item">
 
                         <small>
                             Type
@@ -979,7 +1058,7 @@
                     </div>
 
 
-                    <div class="meta-card">
+                    <div class="meta-item">
 
                         <small>
                             Focus
@@ -991,552 +1070,557 @@
 
                     </div>
 
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         SHOWCASE
-    ========================== -->
-
-    <section class="showcase-section">
-
-        <div class="showcase-frame">
-
-            <div class="showcase-inner">
-
-                <img
-                    src="../assets/Automation.jpg"
-                    alt="QA Automation Suite"
-                    class="showcase-image">
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         PROJECT OVERVIEW
-    ========================== -->
-
-    <section class="overview">
-
-        <div class="overview-grid">
-
-
-            <div class="overview-main">
-
-                <div class="section-kicker">
-                    Project Overview
-                </div>
-
-
-                <h2>
-                    Smarter testing
-                    <br>
-                    through automation.
-                </h2>
-
-
-                <p>
-
-                    The QA Automation Suite was developed to create
-                    a structured and efficient approach to software
-                    quality assurance.
-
-                </p>
-
-
-                <p>
-
-                    The project focuses on automating repetitive
-                    test scenarios, validating application behavior,
-                    and identifying defects before they reach the
-                    end user.
-
-                </p>
-
-
-                <p>
-
-                    Automated testing helps improve testing consistency
-                    and allows QA teams to spend more time on complex
-                    scenarios and overall product quality.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="info-stack">
-
-                <div class="info-card">
-
-                    <small>
-                        Project Type
-                    </small>
-
-                    <strong>
-                        QA Automation
-                    </strong>
-
-                </div>
-
-
-                <div class="info-card">
-
-                    <small>
-                        Testing
-                    </small>
-
-                    <strong>
-                        Automated Test Cases
-                    </strong>
-
-                </div>
-
-
-                <div class="info-card">
-
-                    <small>
-                        Output
-                    </small>
-
-                    <strong>
-                        Automated Test Suite
-                    </strong>
-
-                </div>
-
-
-                <div class="info-card">
-
-                    <small>
-                        Primary Goal
-                    </small>
-
-                    <strong>
-                        Improve Software Quality
-                    </strong>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
+        <!-- =========================================
+             SHOWCASE
+        ========================================== -->
 
-    <!-- =========================
-         PROBLEM & SOLUTION
-    ========================== -->
+        <section class="showcase-section">
 
-    <section class="challenge-section">
+            <div class="case-container">
 
-        <div class="challenge-container">
+                <div class="showcase-frame">
 
+                    <div class="showcase-inner">
 
-            <div class="challenge-intro">
+                        <img
+                            src="../assets/Automation.jpg"
+                            alt="QA Automation Suite"
+                            class="showcase-image">
 
-                <div class="section-kicker">
-                    Problem & Solution
+                    </div>
+
                 </div>
-
-
-                <h2>
-                    From repetitive testing
-                    <br>
-                    to automated quality assurance.
-                </h2>
-
-
-                <p>
-
-                    The objective was to make software testing more
-                    reliable, repeatable and efficient by introducing
-                    automated testing workflows.
-
-                </p>
 
             </div>
 
+        </section>
 
 
-            <div class="challenge-grid">
+        <!-- =========================================
+             OVERVIEW
+        ========================================== -->
+
+        <section class="overview">
+
+            <div class="case-container">
+
+                <div class="overview-grid">
 
 
-                <div class="challenge-card">
+                    <div class="overview-main">
 
-                    <div class="challenge-icon">
-                        01
+                        <span class="section-label">
+                            Project Overview
+                        </span>
+
+
+                        <h2>
+
+                            Smarter testing
+                            <span>
+                                through automation.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            The QA Automation Suite was developed to
+                            create a structured and efficient approach
+                            to software quality assurance.
+
+                        </p>
+
+
+                        <p>
+
+                            The project focuses on automating repetitive
+                            test scenarios, validating application
+                            behavior, and identifying defects before
+                            they reach the end user.
+
+                        </p>
+
+
+                        <p>
+
+                            Automated testing helps improve testing
+                            consistency and allows QA teams to spend
+                            more time on complex scenarios and overall
+                            product quality.
+
+                        </p>
+
                     </div>
 
 
-                    <h3>
-                        The Problem
-                    </h3>
+                    <div class="info-stack">
+
+
+                        <div class="info-card">
+
+                            <small>
+                                Project Type
+                            </small>
+
+                            <strong>
+                                QA Automation
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <small>
+                                Testing
+                            </small>
+
+                            <strong>
+                                Automated Test Cases
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <small>
+                                Output
+                            </small>
+
+                            <strong>
+                                Automated Test Suite
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <small>
+                                Primary Goal
+                            </small>
+
+                            <strong>
+                                Improve Software Quality
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CHALLENGE
+        ========================================== -->
+
+        <section class="challenge-section">
+
+            <div class="case-container">
+
+
+                <div class="challenge-head">
+
+                    <span class="section-label">
+                        Challenge & Approach
+                    </span>
+
+
+                    <h2>
+
+                        From repetitive testing
+                        to automated quality assurance.
+
+                    </h2>
 
 
                     <p>
 
-                        Repeating the same test cases manually can
-                        consume significant time and may introduce
-                        human errors. Regression testing becomes
-                        especially difficult when applications are
-                        updated frequently.
+                        The objective was to make software testing
+                        more reliable, repeatable and efficient by
+                        introducing automated testing workflows.
 
                     </p>
 
                 </div>
 
 
+                <div class="challenge-grid">
 
-                <div class="challenge-card">
 
-                    <div class="challenge-icon">
-                        02
+                    <div class="challenge-card">
+
+                        <div class="challenge-icon">
+                            01
+                        </div>
+
+
+                        <h3>
+                            The Problem
+                        </h3>
+
+
+                        <p>
+
+                            Repeating the same test cases manually can
+                            consume significant time and may introduce
+                            human errors. Regression testing becomes
+                            especially difficult when applications are
+                            updated frequently.
+
+                        </p>
+
                     </div>
 
 
-                    <h3>
-                        The Solution
-                    </h3>
+                    <div class="challenge-card">
+
+                        <div class="challenge-icon">
+                            02
+                        </div>
+
+
+                        <h3>
+                            The Solution
+                        </h3>
+
+
+                        <p>
+
+                            Automated test cases were created to
+                            execute important application scenarios
+                            consistently. This reduced repetitive
+                            manual work and made it easier to validate
+                            application functionality after changes.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TECHNOLOGY
+        ========================================== -->
+
+        <section class="technology-section">
+
+            <div class="case-container">
+
+
+                <div class="technology-head">
+
+                    <span class="section-label">
+                        Technologies
+                    </span>
+
+
+                    <h2>
+
+                        Built with modern
+                        testing technologies.
+
+                    </h2>
 
 
                     <p>
 
-                        Automated test cases were created to execute
-                        important application scenarios consistently.
-                        This reduced repetitive manual work and made
-                        it easier to validate application functionality
-                        after changes.
+                        Testing tools and automation practices were
+                        used to create repeatable test workflows and
+                        improve the overall software quality process.
 
                     </p>
 
                 </div>
 
 
+                <div class="technologies">
+
+
+                    <span class="tech">
+                        Selenium
+                    </span>
+
+
+                    <span class="tech">
+                        Python
+                    </span>
+
+
+                    <span class="tech">
+                        PyTest
+                    </span>
+
+
+                    <span class="tech">
+                        Web Automation
+                    </span>
+
+
+                    <span class="tech">
+                        Test Cases
+                    </span>
+
+
+                    <span class="tech">
+                        Regression Testing
+                    </span>
+
+
+                    <span class="tech">
+                        Functional Testing
+                    </span>
+
+
+                    <span class="tech">
+                        Automation Testing
+                    </span>
+
+
+                </div>
+
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
+        <!-- =========================================
+             HIGHLIGHTS
+        ========================================== -->
 
-    <!-- =========================
-         TECHNOLOGIES
-    ========================== -->
+        <section class="highlights">
 
-    <section class="technology-section">
-
-        <div class="technology-container">
-
-
-            <div class="technology-head">
-
-                <div class="section-kicker">
-                    Technologies
-                </div>
+            <div class="case-container">
 
 
                 <h2>
-                    Built with modern
-                    <br>
-                    testing technologies.
+                    Project Highlights
                 </h2>
 
 
-                <p>
+                <div class="highlight-grid">
 
-                    Testing tools and automation practices were used
-                    to create repeatable test workflows and improve
-                    the overall software quality process.
 
-                </p>
+                    <div class="highlight-card">
+
+                        <div class="highlight-number">
+                            01
+                        </div>
+
+
+                        <h3>
+                            Test Automation
+                        </h3>
+
+
+                        <p>
+
+                            Repetitive test scenarios were automated
+                            to reduce manual testing effort and improve
+                            testing efficiency.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <div class="highlight-number">
+                            02
+                        </div>
+
+
+                        <h3>
+                            Regression Testing
+                        </h3>
+
+
+                        <p>
+
+                            Automated regression checks help verify
+                            that new application changes do not break
+                            existing functionality.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="highlight-card">
+
+                        <div class="highlight-number">
+                            03
+                        </div>
+
+
+                        <h3>
+                            Quality Assurance
+                        </h3>
+
+
+                        <p>
+
+                            Structured test cases and repeatable
+                            automation workflows help improve the
+                            reliability and consistency of testing.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
+        </section>
 
 
-            <div class="technologies">
+        <!-- =========================================
+             SCREENSHOTS
+        ========================================== -->
 
-                <div class="tech">
-                    Selenium
-                </div>
+        <section class="screenshots">
 
-                <div class="tech">
-                    Python
-                </div>
+            <div class="case-container">
 
-                <div class="tech">
-                    PyTest
-                </div>
 
-                <div class="tech">
-                    Web Automation
-                </div>
+                <div class="screenshots-head">
 
-                <div class="tech">
-                    Test Cases
-                </div>
-
-                <div class="tech">
-                    Regression Testing
-                </div>
-
-                <div class="tech">
-                    Functional Testing
-                </div>
-
-                <div class="tech">
-                    Automation Testing
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         KEY HIGHLIGHTS
-    ========================== -->
-
-    <section class="highlights">
-
-        <div class="highlight-container">
-
-
-            <div class="section-kicker">
-                Key Highlights
-            </div>
-
-
-            <h2>
-                Designed around
-                <br>
-                software quality.
-            </h2>
-
-
-
-            <div class="highlight-grid">
-
-
-                <div class="highlight-card">
-
-                    <strong>
-                        01 — Test Automation
-                    </strong>
-
-
-                    <p>
-
-                        Repetitive test scenarios were automated
-                        to reduce manual testing effort and improve
-                        testing efficiency.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="highlight-card">
-
-                    <strong>
-                        02 — Regression Testing
-                    </strong>
-
-
-                    <p>
-
-                        Automated regression checks help verify
-                        that new application changes do not break
-                        existing functionality.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="highlight-card">
-
-                    <strong>
-                        03 — Quality Assurance
-                    </strong>
-
-
-                    <p>
-
-                        Structured test cases and repeatable
-                        automation workflows help improve the
-                        reliability and consistency of testing.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         PROJECT PREVIEW
-    ========================== -->
-
-    <section class="screenshots">
-
-        <div class="screenshots-container">
-
-
-            <div class="screenshots-head">
-
-                <div class="section-kicker">
-                    Project Preview
-                </div>
-
-
-                <h2>
-                    QA automation
-                    <br>
-                    project preview.
-                </h2>
-
-
-                <p>
-                    A visual preview of the QA Automation Suite.
-                </p>
-
-            </div>
-
-
-
-            <div class="screenshot-grid">
-
-
-                <div class="screenshot-card">
-
-                    <img
-                        src="../assets/Automation.jpg"
-                        alt="QA Automation Suite">
 
                     <div>
 
-                        <strong>
-                            Automation Testing Suite
-                        </strong>
+                        <span class="section-label">
+                            Project Preview
+                        </span>
+
+
+                        <h2>
+                            QA automation project preview.
+                        </h2>
 
                     </div>
+
+
+                    <p>
+
+                        A visual preview of the QA Automation Suite
+                        and its testing workflow.
+
+                    </p>
 
                 </div>
 
 
+                <div class="screenshot-grid">
 
-                <div class="screenshot-card">
 
-                    <img
-                        src="../assets/Automation.jpg"
-                        alt="QA Automation Testing">
+                    <div class="screenshot-card">
 
-                    <div>
-
-                        <strong>
-                            QA Testing Preview
-                        </strong>
+                        <img
+                            src="../assets/Automation.jpg"
+                            alt="QA Automation Suite">
 
                     </div>
 
+
+                    <div class="screenshot-card">
+
+                        <img
+                            src="../assets/Automation.jpg"
+                            alt="QA Automation Testing">
+
+                    </div>
+
+
                 </div>
 
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="case-cta">
+
+            <div class="case-container">
+
+
+                <h2>
+
+                    Need reliable
+                    software testing?
+
+                </h2>
+
+
+                <p>
+
+                    Let's build an efficient testing strategy that
+                    improves software quality, reduces repetitive
+                    testing and helps deliver reliable applications.
+
+                </p>
+
+
+                <div class="case-actions">
+
+
+                    <a
+                        href="../index.html#contact"
+                        class="case-btn">
+
+                        Start a Project →
+
+                    </a>
+
+
+                    <a
+                        href="../index.html#portfolio"
+                        class="case-btn secondary">
+
+                        ← Back to Portfolio
+
+                    </a>
+
+
+                </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-
-    <!-- =========================
-         CTA
-    ========================== -->
-
-    <section class="case-cta">
-
-        <div class="cta-box">
-
-
-            <div class="section-kicker">
-                Start Your Project
-            </div>
-
-
-            <h2>
-                Need reliable software testing?
-            </h2>
-
-
-            <p>
-
-                Let's build an efficient testing strategy that
-                improves software quality, reduces repetitive
-                testing and helps deliver reliable applications.
-
-            </p>
-
-
-
-            <div class="case-actions">
-
-
-                <a
-                    href="../index.html#contact"
-                    class="btn blue">
-
-                    Start a Project →
-
-                </a>
-
-
-                <a
-                    href="../index.html#portfolio"
-                    class="btn outline">
-
-                    ← Back to Portfolio
-
-                </a>
-
-
-            </div>
-
-        </div>
-
-    </section>
+    </main>
 
 
 </body>
 
 </html>
-```
