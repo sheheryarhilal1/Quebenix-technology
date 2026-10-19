@@ -1,6 +1,23 @@
 const menu = document.querySelector('.hamb'), nav = document.querySelector('.nav nav'); menu?.addEventListener('click', () => nav.classList.toggle('open'));
 document.querySelectorAll('.nav nav a').forEach(a => a.addEventListener('click', () => nav?.classList.remove('open')));
-const form = document.querySelector('#contactForm'); form?.addEventListener('submit', e => { e.preventDefault(); const m = document.querySelector('#formMsg'); m.textContent = 'Thanks! Your message is ready to be connected to email/backend.'; m.style.color = '#078ff0'; form.reset(); });
+const form = document.querySelector('#contactForm');
+form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const sender = String(data.get('email') || '').trim();
+    const service = String(data.get('service') || 'General Inquiry').trim();
+    const messageField = form.querySelector('textarea[name="message"]');
+    const message = messageField ? String(messageField.value || '').trim() : '';
+    const subject = encodeURIComponent(`Quebenix Technology Inquiry — ${service}`);
+    const body = encodeURIComponent(`Name: ${name}\nContact Email: ${sender}\nProject/Service: ${service}\n\nMessage:\n${message || 'Please contact me to discuss this project.'}`);
+    const m = document.querySelector('#formMsg');
+    if (m) {
+        m.textContent = 'Opening your email app with the message addressed to Quebenix Technology. Please press Send in your email app.';
+        m.style.color = '#078ff0';
+    }
+    window.location.href = `mailto:quebenixtechnology4@gmail.com?subject=${subject}&body=${body}`;
+});
 document.querySelectorAll('[data-filter]').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('[data-filter]').forEach(x => x.classList.remove('active')); b.classList.add('active'); let f = b.dataset.filter; document.querySelectorAll('.all-posts .post').forEach(p => p.style.display = f === 'all' || p.dataset.cat === f ? 'block' : 'none') }));
 /* =========================================================
    EXPERIENCE COUNTER ANIMATION
