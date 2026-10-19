@@ -953,6 +953,72 @@
 
         }
 
+    
+        /* Reference-matched project screenshot gallery */
+        .screenshots {
+            padding: 76px 0 90px;
+            background: #f7fafc;
+        }
+        .screenshots-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+        .screenshots-head h2 {
+            color: #102338;
+            font-size: clamp(34px, 4vw, 58px);
+            line-height: 1.1;
+            margin: 10px 0 0;
+            letter-spacing: -1.3px;
+        }
+        .screenshots-head p {
+            color: #718496;
+            max-width: 440px;
+            margin: 0;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+            align-items: stretch;
+        }
+        .screenshot-card {
+            min-width: 0;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #dce7ee;
+            border-radius: 28px;
+            box-shadow: 0 18px 48px rgba(16, 35, 55, .08);
+            overflow: hidden;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 24px 54px rgba(16, 35, 55, .12);
+        }
+        .screenshot-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1.62 / 1;
+            object-fit: cover;
+            object-position: top center;
+            background: #f1f5f9;
+            border-radius: 17px;
+        }
+        @media (max-width: 760px) {
+            .screenshots { padding: 58px 0 65px; }
+            .screenshots-head { display: block; }
+            .screenshots-head p { margin-top: 18px; font-size: 15px; }
+            .screenshot-grid { grid-template-columns: 1fr; gap: 22px; }
+            .screenshot-card { padding: 8px; border-radius: 20px; }
+            .screenshot-card img { aspect-ratio: 1.45 / 1; border-radius: 13px; }
+        }
+
     </style>
 
 </head>
@@ -1505,11 +1571,8 @@
         ========================================== -->
 
         <section class="screenshots">
-
-            <div class="case-container">
-
-
-                <div class="screenshots-head">
+    <div class="case-container">
+        <div class="screenshots-head">
 
 
                     <div>
@@ -1534,34 +1597,12 @@
                     </p>
 
                 </div>
-
-
-                <div class="screenshot-grid">
-
-
-                    <div class="screenshot-card">
-
-                        <img
-                            src="../assets/Automation.jpg"
-                            alt="QA Automation Suite">
-
-                    </div>
-
-
-                    <div class="screenshot-card">
-
-                        <img
-                            src="../assets/Automation.jpg"
-                            alt="QA Automation Testing">
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
+        <div class="screenshot-grid">
+            <div class="screenshot-card"><img src="../assets/Automation.jpg" alt="QA Automation Suite" loading="lazy"></div>
+            <div class="screenshot-card"><img src="../assets/Qa.jpg" alt="Qa Automation Screenshot 2" loading="lazy"></div>
+        </div>
+    </div>
+</section>
 
 
         <!-- =========================================

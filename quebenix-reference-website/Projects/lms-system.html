@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,18 +10,14 @@
     <link rel="stylesheet" href="../style.css">
 
     <style>
-        .case-page {
-            overflow: hidden;
-        }
-
-        /* HERO */
+        .case-page { overflow: hidden; }
 
         .case-hero {
             position: relative;
             padding: 125px 0 90px;
             background:
-                radial-gradient(circle at 85% 20%, rgba(7, 156, 255, .20), transparent 30%),
-                radial-gradient(circle at 15% 80%, rgba(32, 199, 255, .12), transparent 30%),
+                radial-gradient(circle at 85% 20%, rgba(7,156,255,.20), transparent 30%),
+                radial-gradient(circle at 15% 80%, rgba(32,199,255,.12), transparent 30%),
                 linear-gradient(135deg, #03111e, #06243b 55%, #03111e);
             color: #fff;
         }
@@ -32,7 +27,7 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            border: 1px solid rgba(32, 199, 255, .12);
+            border: 1px solid rgba(32,199,255,.12);
             border-radius: 50%;
             right: -180px;
             top: -180px;
@@ -56,18 +51,16 @@
             transition: .3s ease;
         }
 
-        .back-btn:hover {
-            transform: translateX(-5px);
-        }
+        .back-btn:hover { transform: translateX(-5px); }
 
         .case-label {
             display: inline-flex;
             align-items: center;
             gap: 9px;
             padding: 8px 14px;
-            border: 1px solid rgba(91, 202, 255, .3);
+            border: 1px solid rgba(91,202,255,.3);
             border-radius: 30px;
-            background: rgba(7, 156, 255, .08);
+            background: rgba(7,156,255,.08);
             color: #5bcaff;
             font-size: 12px;
             font-weight: 700;
@@ -83,10 +76,7 @@
             box-shadow: 0 0 12px #20c7ff;
         }
 
-        .case-title {
-            max-width: 900px;
-            margin-top: 25px;
-        }
+        .case-title { max-width: 900px; margin-top: 25px; }
 
         .case-title h1 {
             font-size: clamp(45px, 7vw, 82px);
@@ -95,9 +85,7 @@
             letter-spacing: -3px;
         }
 
-        .case-title h1 span {
-            color: #20c7ff;
-        }
+        .case-title h1 span { color: #20c7ff; }
 
         .case-description {
             max-width: 720px;
@@ -107,15 +95,13 @@
             line-height: 1.8;
         }
 
-        /* META */
-
         .hero-meta {
             display: flex;
             flex-wrap: wrap;
             gap: 45px;
             margin-top: 45px;
             padding-top: 25px;
-            border-top: 1px solid rgba(255, 255, 255, .12);
+            border-top: 1px solid rgba(255,255,255,.12);
         }
 
         .meta-item small {
@@ -127,12 +113,7 @@
             margin-bottom: 6px;
         }
 
-        .meta-item strong {
-            color: #fff;
-            font-size: 14px;
-        }
-
-        /* SHOWCASE */
+        .meta-item strong { color: #fff; font-size: 14px; }
 
         .showcase-section {
             margin-top: -50px;
@@ -142,10 +123,10 @@
 
         .showcase-frame {
             padding: 10px;
-            background: rgba(255, 255, 255, .08);
-            border: 1px solid rgba(255, 255, 255, .15);
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
             border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, .30);
+            box-shadow: 0 30px 80px rgba(0,0,0,.30);
         }
 
         .showcase-inner {
@@ -154,16 +135,9 @@
             background: #fff;
         }
 
-        .showcase-image {
-            width: 100%;
-            display: block;
-        }
+        .showcase-image { width: 100%; display: block; }
 
-        /* OVERVIEW */
-
-        .overview {
-            padding: 100px 0 70px;
-        }
+        .overview { padding: 100px 0 70px; }
 
         .overview-grid {
             display: grid;
@@ -187,9 +161,7 @@
             color: #102337;
         }
 
-        .overview-main h2 span {
-            color: #168cff;
-        }
+        .overview-main h2 span { color: #168cff; }
 
         .overview-main p {
             color: #64748b;
@@ -198,17 +170,14 @@
             max-width: 700px;
         }
 
-        .info-stack {
-            display: grid;
-            gap: 15px;
-        }
+        .info-stack { display: grid; gap: 15px; }
 
         .info-card {
             padding: 22px;
             background: #fff;
             border: 1px solid #e1eaf0;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(16, 35, 55, .05);
+            box-shadow: 0 10px 30px rgba(16,35,55,.05);
         }
 
         .info-card small {
@@ -219,21 +188,14 @@
             text-transform: uppercase;
         }
 
-        .info-card strong {
-            font-size: 15px;
-            color: #102337;
-        }
-
-        /* CHALLENGE */
+        .info-card strong { font-size: 15px; color: #102337; }
 
         .challenge-section {
             padding: 80px 0;
             background: #f0f6fa;
         }
 
-        .challenge-head {
-            margin-bottom: 35px;
-        }
+        .challenge-head { margin-bottom: 35px; }
 
         .challenge-head h2 {
             font-size: 40px;
@@ -263,7 +225,7 @@
             border-radius: 50%;
             right: -70px;
             bottom: -70px;
-            background: rgba(7, 156, 255, .06);
+            background: rgba(7,156,255,.06);
         }
 
         .challenge-icon {
@@ -290,11 +252,7 @@
             margin: 0;
         }
 
-        /* TECHNOLOGIES */
-
-        .technology-section {
-            padding: 90px 0;
-        }
+        .technology-section { padding: 90px 0; }
 
         .technology-head {
             text-align: center;
@@ -307,10 +265,7 @@
             margin: 10px 0 15px;
         }
 
-        .technology-head p {
-            color: #718496;
-            line-height: 1.8;
-        }
+        .technology-head p { color: #718496; line-height: 1.8; }
 
         .technologies {
             display: flex;
@@ -335,8 +290,6 @@
             transform: translateY(-3px);
             background: #e1f3ff;
         }
-
-        /* HIGHLIGHTS */
 
         .highlights {
             padding: 75px 0;
@@ -387,11 +340,7 @@
             margin: 0;
         }
 
-        /* SCREENSHOTS */
-
-        .screenshots {
-            padding: 100px 0;
-        }
+        .screenshots { padding: 100px 0; }
 
         .screenshots-head {
             display: flex;
@@ -423,14 +372,14 @@
             background: #fff;
             border: 1px solid #dce7ee;
             border-radius: 18px;
-            box-shadow: 0 15px 40px rgba(16, 35, 55, .08);
+            box-shadow: 0 15px 40px rgba(16,35,55,.08);
             overflow: hidden;
             transition: .3s ease;
         }
 
         .screenshot-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 22px 50px rgba(16, 35, 55, .13);
+            box-shadow: 0 22px 50px rgba(16,35,55,.13);
         }
 
         .screenshot-card img {
@@ -439,12 +388,10 @@
             border-radius: 12px;
         }
 
-        /* CTA */
-
         .case-cta {
             padding: 80px 0;
             background:
-                radial-gradient(circle at 80% 50%, rgba(32, 199, 255, .16), transparent 35%),
+                radial-gradient(circle at 80% 50%, rgba(32,199,255,.16), transparent 35%),
                 linear-gradient(135deg, #06243b, #03111e);
             color: #fff;
             text-align: center;
@@ -483,7 +430,7 @@
 
         .case-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(7, 156, 255, .25);
+            box-shadow: 0 10px 25px rgba(7,156,255,.25);
         }
 
         .case-btn.secondary {
@@ -491,495 +438,396 @@
             border: 1px solid #31546a;
         }
 
-        .case-btn.secondary:hover {
-            border-color: #20c7ff;
-        }
-
-        /* RESPONSIVE */
+        .case-btn.secondary:hover { border-color: #20c7ff; }
 
         @media(max-width:900px) {
-
             .overview-grid {
                 grid-template-columns: 1fr;
                 gap: 35px;
             }
 
-            .highlight-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-meta {
-                gap: 25px;
-            }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .hero-meta { gap: 25px; }
         }
 
         @media(max-width:700px) {
-
-            .case-hero {
-                padding: 105px 0 75px;
-            }
-
-            .case-title h1 {
-                letter-spacing: -1.5px;
-            }
-
-            .case-description {
-                font-size: 16px;
-            }
+            .case-hero { padding: 105px 0 75px; }
+            .case-title h1 { letter-spacing: -1.5px; }
+            .case-description { font-size: 16px; }
 
             .challenge-grid,
-            .screenshot-grid {
-                grid-template-columns: 1fr;
-            }
+            .screenshot-grid { grid-template-columns: 1fr; }
 
-            .screenshots-head {
-                display: block;
-            }
-
-            .screenshots-head p {
-                margin-top: 15px;
-            }
+            .screenshots-head { display: block; }
+            .screenshots-head p { margin-top: 15px; }
 
             .overview,
-            .screenshots {
-                padding: 70px 0;
-            }
+            .screenshots { padding: 70px 0; }
         }
+    
+        /* Reference-matched project screenshot gallery */
+        .screenshots {
+            padding: 76px 0 90px;
+            background: #f7fafc;
+        }
+        .screenshots-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+        .screenshots-head h2 {
+            color: #102338;
+            font-size: clamp(34px, 4vw, 58px);
+            line-height: 1.1;
+            margin: 10px 0 0;
+            letter-spacing: -1.3px;
+        }
+        .screenshots-head p {
+            color: #718496;
+            max-width: 440px;
+            margin: 0;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+            align-items: stretch;
+        }
+        .screenshot-card {
+            min-width: 0;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #dce7ee;
+            border-radius: 28px;
+            box-shadow: 0 18px 48px rgba(16, 35, 55, .08);
+            overflow: hidden;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 24px 54px rgba(16, 35, 55, .12);
+        }
+        .screenshot-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1.62 / 1;
+            object-fit: cover;
+            object-position: top center;
+            background: #f1f5f9;
+            border-radius: 17px;
+        }
+        @media (max-width: 760px) {
+            .screenshots { padding: 58px 0 65px; }
+            .screenshots-head { display: block; }
+            .screenshots-head p { margin-top: 18px; font-size: 15px; }
+            .screenshot-grid { grid-template-columns: 1fr; gap: 22px; }
+            .screenshot-card { padding: 8px; border-radius: 20px; }
+            .screenshot-card img { aspect-ratio: 1.45 / 1; border-radius: 13px; }
+        }
+
     </style>
 </head>
 
 <body>
 
-    <main class="case-page">
+<main class="case-page">
 
-        <!-- HERO -->
+    <!-- HERO -->
+    <section class="case-hero">
+        <div class="case-container">
 
-        <section class="case-hero">
+            <a href="../index.html#portfolio" class="back-btn">
+                ← Back to Portfolio
+            </a>
 
-            <div class="case-container">
-
-                <a href="../index.html#portfolio" class="back-btn">
-                    ← Back to Portfolio
-                </a>
-
-                <div class="case-label">
-                    <span></span>
-                    Web Application
-                </div>
-
-                <div class="case-title">
-
-                    <h1>
-                        LMS
-                        <span>Learning Management System</span>
-                    </h1>
-
-                    <p class="case-description">
-                        A digital attendance management system designed to
-                        simplify attendance tracking, reduce manual work and
-                        provide an efficient way for teachers and administrators
-                        to manage attendance records.
-                    </p>
-
-                </div>
-
-                <div class="hero-meta">
-
-                    <div class="meta-item">
-                        <small>Role</small>
-                        <strong>Flutter Developer</strong>
-                    </div>
-
-                    <div class="meta-item">
-                        <small>Status</small>
-                        <strong>Completed</strong>
-                    </div>
-
-                    <div class="meta-item">
-                        <small>Type</small>
-                        <strong>Web Applicationlication</strong>
-                    </div>
-
-                    <div class="meta-item">
-                        <small>Focus</small>
-                        <strong>Student Panel</strong>
-                    </div>
-
-                </div>
-
+            <div class="case-label">
+                <span></span>
+                Web Application
             </div>
 
-        </section>
+            <div class="case-title">
+                <h1>
+                    LMS
+                    <span>Learning Management System</span>
+                </h1>
 
-
-        <!-- PROJECT SHOWCASE -->
-
-        <section class="showcase-section">
-
-            <div class="case-container">
-
-                <div class="showcase-frame">
-
-                    <div class="showcase-inner">
-
-                        <img
-                            src="../assets/Online Attendence.jpg"
-                            alt="LMS — Learning Management System"
-                            class="showcase-image">
-
-                    </div>
-
-                </div>
-
+                <p class="case-description">
+                    A Learning Management System designed to connect students,
+                    teachers, and parents through a centralized digital learning
+                    platform. It helps organize courses, assignments, academic
+                    progress, and communication through dedicated role-based
+                    dashboards.
+                </p>
             </div>
 
-        </section>
-
-
-        <!-- PROJECT OVERVIEW -->
-
-        <section class="overview">
-
-            <div class="case-container">
-
-                <div class="overview-grid">
-
-                    <div class="overview-main">
-
-                        <span class="section-label">
-                            Project Overview
-                        </span>
-
-                        <h2>
-                            Managing LMS — Learning Management System
-                            <span>simple and digital.</span>
-                        </h2>
-
-                        <p>
-                            Traditional attendance management can require
-                            significant manual effort and can make it difficult
-                            to maintain accurate records. This project was
-                            developed to provide a digital solution for managing
-                            teacher attendance efficiently.
-                        </p>
-
-                        <p>
-                            The system provides an easy-to-use mobile interface
-                            for recording and managing attendance while keeping
-                            attendance information organized and accessible.
-                        </p>
-
-                    </div>
-
-
-                    <div class="info-stack">
-
-                        <div class="info-card">
-                            <small>Project Type</small>
-                            <strong>Learnora LMS</strong>
-                        </div>
-
-                        <div class="info-card">
-                            <small>Platform</small>
-                            <strong>Android / Mobile</strong>
-                        </div>
-
-                        <div class="info-card">
-                            <small>Development</small>
-                            <strong>Flutter Application</strong>
-                        </div>
-
-                    </div>
-
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <small>Role</small>
+                    <strong>Web Developer</strong>
                 </div>
 
+                <div class="meta-item">
+                    <small>Status</small>
+                    <strong>Completed</strong>
+                </div>
+
+                <div class="meta-item">
+                    <small>Type</small>
+                    <strong>Web Application</strong>
+                </div>
+
+                <div class="meta-item">
+                    <small>Panels</small>
+                    <strong>Student, Teacher & Parent</strong>
+                </div>
             </div>
 
-        </section>
+        </div>
+    </section>
 
+    <!-- PROJECT SHOWCASE -->
+    <section class="showcase-section">
+        <div class="case-container">
+            <div class="showcase-frame">
+                <div class="showcase-inner">
+                    <img src="../assets/LMS.PNG"
+                         alt="LMS Learning Management System"
+                         class="showcase-image">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- PROBLEM / SOLUTION -->
+    <!-- PROJECT OVERVIEW -->
+    <section class="overview">
+        <div class="case-container">
+            <div class="overview-grid">
 
-        <section class="challenge-section">
-
-            <div class="case-container">
-
-                <div class="challenge-head">
-
-                    <span class="section-label">
-                        The Challenge
-                    </span>
+                <div class="overview-main">
+                    <span class="section-label">Project Overview</span>
 
                     <h2>
-                        Managing learning across separate users and disconnected workflows.
-                    </h2>
-
-                </div>
-
-
-                <div class="challenge-grid">
-
-                    <div class="challenge-card">
-
-                        <div class="challenge-icon">
-                            01
-                        </div>
-
-                        <h3>
-                            Problem
-                        </h3>
-
-                        <p>
-                            Manual attendance processes can be time-consuming
-                            and may lead to missing, inconsistent or difficult-
-                            to-manage attendance records. Teachers and
-                            administrators need a faster and more organized
-                            approach.
-                        </p>
-
-                    </div>
-
-
-                    <div class="challenge-card">
-
-                        <div class="challenge-icon">
-                            02
-                        </div>
-
-                        <h3>
-                            Solution
-                        </h3>
-
-                        <p>
-                            I developed a mobile-based attendance system with
-                            a simple interface that allows attendance records
-                            to be captured and managed digitally, reducing
-                            manual effort and improving record organization.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- TECHNOLOGIES -->
-
-        <section class="technology-section">
-
-            <div class="case-container">
-
-                <div class="technology-head">
-
-                    <span class="section-label">
-                        Tools & Technologies
-                    </span>
-
-                    <h2>
-                        Built with modern
-                        web application technologies.
+                        Managing Learning
+                        <span>Simply and Digitally.</span>
                     </h2>
 
                     <p>
-                        The application combines Flutter development with
-                        backend and authentication technologies to create a
-                        practical digital attendance solution.
+                        Managing learning through separate tools can make it
+                        difficult to organize courses, monitor student progress,
+                        and keep students, teachers, and parents informed. This
+                        LMS was developed to bring essential learning activities
+                        together in one centralized platform.
                     </p>
 
+                    <p>
+                        The platform includes separate dashboards for students,
+                        teachers, and parents. Each panel provides relevant
+                        information and features to support course access,
+                        assignment management, academic updates, and student
+                        progress monitoring.
+                    </p>
                 </div>
 
+                <div class="info-stack">
+                    <div class="info-card">
+                        <small>Project Name</small>
+                        <strong>Learnora LMS</strong>
+                    </div>
 
-                <div class="technologies">
+                    <div class="info-card">
+                        <small>Platform</small>
+                        <strong>Responsive Web Application</strong>
+                    </div>
 
-                    <span class="tech">Flutter</span>
-
-                    <span class="tech">Dart</span>
-
-                    <span class="tech">Firebase</span>
-
-                    <span class="tech">Firebase Auth</span>
-
-                    <span class="tech">Firestore</span>
-
-                    <span class="tech">Firebase Storage</span>
-
-                    <span class="tech">QR Scanner</span>
-
-                    <span class="tech">GetX</span>
-
+                    <div class="info-card">
+                        <small>User Panels</small>
+                        <strong>Student / Teacher / Parent</strong>
+                    </div>
                 </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- PROBLEM / SOLUTION -->
+    <section class="challenge-section">
+        <div class="case-container">
 
-
-        <!-- PROJECT HIGHLIGHTS -->
-
-        <section class="highlights">
-
-            <div class="case-container">
-
+            <div class="challenge-head">
+                <span class="section-label">The Challenge</span>
                 <h2>
-                    Project Highlights
+                    Managing learning across different users and workflows.
                 </h2>
-
-                <div class="highlight-grid">
-
-                    <div class="highlight-card">
-
-                        <div class="highlight-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Student Panel
-                        </h3>
-
-                        <p>
-                            Replaced manual attendance processes with a
-                            structured digital workflow.
-                        </p>
-
-                    </div>
-
-
-                    <div class="highlight-card">
-
-                        <div class="highlight-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Teacher Panel
-                        </h3>
-
-                        <p>
-                            Designed a simple mobile interface for recording
-                            and managing attendance information.
-                        </p>
-
-                    </div>
-
-
-                    <div class="highlight-card">
-
-                        <div class="highlight-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Parent Panel
-                        </h3>
-
-                        <p>
-                            Used Firebase services to support authentication
-                            and structured application data management.
-                        </p>
-
-                    </div>
-
-                </div>
-
             </div>
 
-        </section>
+            <div class="challenge-grid">
 
+                <div class="challenge-card">
+                    <div class="challenge-icon">01</div>
 
-        <!-- SCREENSHOTS -->
-
-        <section class="screenshots">
-
-            <div class="case-container">
-
-                <div class="screenshots-head">
-
-                    <div>
-
-                        <span class="section-label">
-                            Visual Preview
-                        </span>
-
-                        <h2>
-                            Project Screenshots
-                        </h2>
-
-                    </div>
+                    <h3>Problem</h3>
 
                     <p>
-                        A visual preview of the LMS — Learning Management System
-                        application.
+                        Learning activities can become difficult to manage
+                        when students, teachers, and parents use disconnected
+                        processes. Course information, assignments, and student
+                        progress need to be organized in an accessible way for
+                        each type of user.
                     </p>
-
                 </div>
 
+                <div class="challenge-card">
+                    <div class="challenge-icon">02</div>
 
-                <div class="screenshot-grid">
+                    <h3>Solution</h3>
 
-                    <div class="screenshot-card">
-
-                        <img
-                            src="../assets/Online Attendence.jpg"
-                            alt="LMS — Learning Management System Screenshot">
-
-                    </div>
-
+                    <p>
+                        I developed a role-based LMS with dedicated student,
+                        teacher, and parent dashboards. The platform organizes
+                        learning activities and provides each user with
+                        relevant information and tools through a consistent,
+                        user-friendly interface.
+                    </p>
                 </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- TECHNOLOGIES -->
+    <section class="technology-section">
+        <div class="case-container">
 
-
-        <!-- CTA -->
-
-        <section class="case-cta">
-
-            <div class="case-container">
+            <div class="technology-head">
+                <span class="section-label">Tools & Technologies</span>
 
                 <h2>
-                    Have a web application project in mind?
+                    Built with Modern Web Technologies.
                 </h2>
 
                 <p>
-                    Let's build a reliable, modern and user-friendly mobile
-                    application for your business or organization.
+                    The LMS uses a responsive web interface and role-based
+                    login flows to provide an organized learning environment
+                    for students, teachers, and parents.
                 </p>
+            </div>
 
+            <div class="technologies">
+                <span class="tech">HTML5</span>
+                <span class="tech">CSS3</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">Responsive UI</span>
+                <span class="tech">Role-Based Login</span>
+                <span class="tech">Student Dashboard</span>
+                <span class="tech">Teacher Dashboard</span>
+                <span class="tech">Parent Dashboard</span>
+                <span class="tech">Local Storage</span>
+            </div>
 
-                <div class="case-actions">
+        </div>
+    </section>
 
-                    <a
-                        href="#"
-                        class="case-btn"
-                        target="_blank">
-                        View Project →
-                    </a>
+    <!-- PROJECT HIGHLIGHTS -->
+    <section class="highlights">
+        <div class="case-container">
 
-                    <a
-                        href="../index.html#contact"
-                        class="case-btn secondary">
-                        Start a Project →
-                    </a>
+            <h2>Project Highlights</h2>
 
-                    <a
-                        href="../index.html#portfolio"
-                        class="case-btn secondary">
-                        ← Back to Portfolio
-                    </a>
+            <div class="highlight-grid">
 
+                <div class="highlight-card">
+                    <div class="highlight-number">01</div>
+                    <h3>Student Panel</h3>
+
+                    <p>
+                        Provides students with access to courses, assignments,
+                        learning activities, and personal academic information
+                        through a dedicated dashboard.
+                    </p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-number">02</div>
+                    <h3>Teacher Panel</h3>
+
+                    <p>
+                        Helps teachers organize courses, manage learning
+                        activities, and access relevant information for
+                        their students.
+                    </p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-number">03</div>
+                    <h3>Parent Panel</h3>
+
+                    <p>
+                        Allows parents to review relevant student information,
+                        monitor academic progress, and stay informed about
+                        their child's learning activities.
+                    </p>
                 </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- SCREENSHOTS -->
+    <section class="screenshots">
+    <div class="case-container">
+        <div class="screenshots-head">
+                <div>
+                    <span class="section-label">Visual Preview</span>
+                    <h2>Project Screenshots</h2>
+                </div>
 
-    </main>
+                <p>
+                    A visual preview of the LMS platform and its student,
+                    teacher, and parent learning workflows.
+                </p>
+            </div>
+        <div class="screenshot-grid">
+            <div class="screenshot-card"><img src="../assets/Parents.PNG" alt="LMS project screenshot" loading="lazy"></div>
+            <div class="screenshot-card"><img src="../assets/Teacher.PNG" alt="LMS project with three pannel" loading="lazy"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- CALL TO ACTION -->
+    <section class="case-cta">
+        <div class="case-container">
+
+            <h2>Ready to Improve Your Learning Experience?</h2>
+
+            <p>
+                Let's build a modern, user-friendly learning platform that
+                connects students, teachers, and parents and makes learning
+                activities easier to manage.
+            </p>
+
+            <div class="case-actions">
+                <a href="../index.html#portfolio" class="case-btn">
+                    View Portfolio →
+                </a>
+
+                <a href="../index.html#contact" class="case-btn secondary">
+                    Start a Project →
+                </a>
+
+                <a href="../index.html#portfolio" class="case-btn secondary">
+                    ← Back to Portfolio
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
 
 </body>
-
 </html>
-```

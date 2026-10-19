@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+        content="Explore the POS System case study by Quebenix Technology, featuring mobile billing, product management, sales tracking, and business workflows.">
+
     <title>POS System | Case Study</title>
 
     <link rel="stylesheet" href="../style.css">
@@ -53,6 +56,7 @@
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 45px;
+            text-decoration: none;
             transition: .3s ease;
         }
 
@@ -157,6 +161,7 @@
         .showcase-image {
             width: 100%;
             display: block;
+            object-fit: cover;
         }
 
         /* OVERVIEW */
@@ -236,8 +241,10 @@
         }
 
         .challenge-head h2 {
-            font-size: 40px;
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.2;
             margin: 10px 0;
+            color: #102337;
         }
 
         .challenge-grid {
@@ -264,6 +271,7 @@
             right: -70px;
             bottom: -70px;
             background: rgba(7, 156, 255, .06);
+            pointer-events: none;
         }
 
         .challenge-icon {
@@ -282,6 +290,7 @@
         .challenge-card h3 {
             font-size: 22px;
             margin: 0 0 12px;
+            color: #102337;
         }
 
         .challenge-card p {
@@ -303,8 +312,10 @@
         }
 
         .technology-head h2 {
-            font-size: 40px;
+            font-size: clamp(30px, 4vw, 40px);
+            line-height: 1.2;
             margin: 10px 0 15px;
+            color: #102337;
         }
 
         .technology-head p {
@@ -346,7 +357,7 @@
 
         .highlights h2 {
             text-align: center;
-            font-size: 38px;
+            font-size: clamp(30px, 4vw, 38px);
             margin: 0 0 40px;
         }
 
@@ -377,6 +388,7 @@
 
         .highlight-card h3 {
             font-size: 18px;
+            line-height: 1.4;
             margin: 12px 0 8px;
         }
 
@@ -402,8 +414,9 @@
         }
 
         .screenshots-head h2 {
-            font-size: 40px;
+            font-size: clamp(30px, 4vw, 40px);
             margin: 10px 0 0;
+            color: #102337;
         }
 
         .screenshots-head p {
@@ -414,7 +427,7 @@
 
         .screenshot-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 25px;
         }
 
@@ -437,6 +450,7 @@
             width: 100%;
             display: block;
             border-radius: 12px;
+            object-fit: cover;
         }
 
         /* CTA */
@@ -452,6 +466,7 @@
 
         .case-cta h2 {
             font-size: clamp(32px, 5vw, 50px);
+            line-height: 1.15;
             margin: 0 0 15px;
         }
 
@@ -478,6 +493,7 @@
             color: #fff;
             font-size: 14px;
             font-weight: 700;
+            text-decoration: none;
             transition: .3s ease;
         }
 
@@ -497,8 +513,7 @@
 
         /* RESPONSIVE */
 
-        @media(max-width:900px) {
-
+        @media (max-width: 900px) {
             .overview-grid {
                 grid-template-columns: 1fr;
                 gap: 35px;
@@ -513,8 +528,7 @@
             }
         }
 
-        @media(max-width:700px) {
-
+        @media (max-width: 700px) {
             .case-hero {
                 padding: 105px 0 75px;
             }
@@ -544,7 +558,81 @@
             .screenshots {
                 padding: 70px 0;
             }
+
+            .challenge-card {
+                padding: 25px;
+            }
+
+            .hero-meta {
+                gap: 22px;
+            }
         }
+    
+        /* Reference-matched project screenshot gallery */
+        .screenshots {
+            padding: 76px 0 90px;
+            background: #f7fafc;
+        }
+        .screenshots-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+        .screenshots-head h2 {
+            color: #102338;
+            font-size: clamp(34px, 4vw, 58px);
+            line-height: 1.1;
+            margin: 10px 0 0;
+            letter-spacing: -1.3px;
+        }
+        .screenshots-head p {
+            color: #718496;
+            max-width: 440px;
+            margin: 0;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+            align-items: stretch;
+        }
+        .screenshot-card {
+            min-width: 0;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #dce7ee;
+            border-radius: 28px;
+            box-shadow: 0 18px 48px rgba(16, 35, 55, .08);
+            overflow: hidden;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 24px 54px rgba(16, 35, 55, .12);
+        }
+        .screenshot-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1.62 / 1;
+            object-fit: cover;
+            object-position: top center;
+            background: #f1f5f9;
+            border-radius: 17px;
+        }
+        @media (max-width: 760px) {
+            .screenshots { padding: 58px 0 65px; }
+            .screenshots-head { display: block; }
+            .screenshots-head p { margin-top: 18px; font-size: 15px; }
+            .screenshot-grid { grid-template-columns: 1fr; gap: 22px; }
+            .screenshot-card { padding: 8px; border-radius: 20px; }
+            .screenshot-card img { aspect-ratio: 1.45 / 1; border-radius: 13px; }
+        }
+
     </style>
 </head>
 
@@ -555,32 +643,31 @@
         <!-- HERO -->
 
         <section class="case-hero">
-
             <div class="case-container">
 
                 <a href="../index.html#portfolio" class="back-btn">
-                    ← Back to Portfolio
+                    &larr; Back to Portfolio
                 </a>
 
                 <div class="case-label">
                     <span></span>
-                    Business Software
+                    Point of Sale Software
                 </div>
 
                 <div class="case-title">
-
                     <h1>
                         POS
                         <span>System</span>
                     </h1>
 
                     <p class="case-description">
-                        A digital attendance management system designed to
-                        simplify attendance tracking, reduce manual work and
-                        provide an efficient way for teachers and administrators
-                        to manage attendance records.
+                        A modern Point of Sale (POS) System designed
+                        to simplify sales transactions, streamline
+                        billing, manage products, and maintain
+                        organized sales records. The application
+                        provides a user-friendly mobile interface
+                        to support everyday business operations.
                     </p>
-
                 </div>
 
                 <div class="hero-meta">
@@ -597,49 +684,40 @@
 
                     <div class="meta-item">
                         <small>Type</small>
-                        <strong>Business Softwarelication</strong>
+                        <strong>Business Application</strong>
                     </div>
 
                     <div class="meta-item">
                         <small>Focus</small>
-                        <strong>Faster Billing</strong>
+                        <strong>Sales &amp; Billing</strong>
                     </div>
 
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- PROJECT SHOWCASE -->
 
         <section class="showcase-section">
-
             <div class="case-container">
 
                 <div class="showcase-frame">
-
                     <div class="showcase-inner">
 
                         <img
-                            src="../assets/Online Attendence.jpg"
-                            alt="POS System"
+                            src="../assets/POS Image.PNG"
+                            alt="POS System Main Interface"
                             class="showcase-image">
 
                     </div>
-
                 </div>
 
             </div>
-
         </section>
-
 
         <!-- PROJECT OVERVIEW -->
 
         <section class="overview">
-
             <div class="case-container">
 
                 <div class="overview-grid">
@@ -651,32 +729,37 @@
                         </span>
 
                         <h2>
-                            Managing POS System
-                            <span>simple and digital.</span>
+                            Simplifying Business
+                            <span>Sales and Operations.</span>
                         </h2>
 
                         <p>
-                            Traditional attendance management can require
-                            significant manual effort and can make it difficult
-                            to maintain accurate records. This project was
-                            developed to provide a digital solution for managing
-                            teacher attendance efficiently.
+                            Traditional sales management often involves
+                            manual billing, time-consuming calculations,
+                            and scattered product and transaction
+                            records. These challenges can make it
+                            difficult for businesses to manage daily
+                            sales efficiently and maintain organized
+                            business information.
                         </p>
 
                         <p>
-                            The system provides an easy-to-use mobile interface
-                            for recording and managing attendance while keeping
-                            attendance information organized and accessible.
+                            This POS System provides a digital
+                            solution for handling sales transactions,
+                            organizing product information, and
+                            simplifying billing workflows. The
+                            application is designed to make everyday
+                            business tasks more convenient through
+                            a clear and user-friendly interface.
                         </p>
 
                     </div>
-
 
                     <div class="info-stack">
 
                         <div class="info-card">
                             <small>Project Type</small>
-                            <strong>POS System</strong>
+                            <strong>Point of Sale System</strong>
                         </div>
 
                         <div class="info-card">
@@ -686,22 +769,18 @@
 
                         <div class="info-card">
                             <small>Development</small>
-                            <strong>Flutter Application</strong>
+                            <strong>Flutter &amp; Dart</strong>
                         </div>
 
                     </div>
 
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- PROBLEM / SOLUTION -->
 
         <section class="challenge-section">
-
             <div class="case-container">
 
                 <div class="challenge-head">
@@ -711,11 +790,11 @@
                     </span>
 
                     <h2>
-                        Manual billing and scattered sales records can slow down daily business operations.
+                        Making daily sales, billing, and product
+                        management simpler for businesses.
                     </h2>
 
                 </div>
-
 
                 <div class="challenge-grid">
 
@@ -725,20 +804,19 @@
                             01
                         </div>
 
-                        <h3>
-                            Problem
-                        </h3>
+                        <h3>Problem</h3>
 
                         <p>
-                            Manual attendance processes can be time-consuming
-                            and may lead to missing, inconsistent or difficult-
-                            to-manage attendance records. Teachers and
-                            administrators need a faster and more organized
-                            approach.
+                            Manual billing and sales recording can
+                            slow down transactions and increase the
+                            chances of calculation errors. Managing
+                            product details, reviewing previous
+                            transactions, and maintaining organized
+                            records can also become difficult when
+                            business information is handled manually.
                         </p>
 
                     </div>
-
 
                     <div class="challenge-card">
 
@@ -746,86 +824,72 @@
                             02
                         </div>
 
-                        <h3>
-                            Solution
-                        </h3>
+                        <h3>Solution</h3>
 
                         <p>
-                            I developed a mobile-based attendance system with
-                            a simple interface that allows attendance records
-                            to be captured and managed digitally, reducing
-                            manual effort and improving record organization.
+                            I developed a mobile-based POS application
+                            using Flutter to provide an organized
+                            sales workflow. The application focuses
+                            on simplifying billing, supporting product
+                            handling, and making sales-related
+                            information easier to manage through a
+                            user-friendly interface.
                         </p>
 
                     </div>
 
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- TECHNOLOGIES -->
 
         <section class="technology-section">
-
             <div class="case-container">
 
                 <div class="technology-head">
 
                     <span class="section-label">
-                        Tools & Technologies
+                        Tools &amp; Technologies
                     </span>
 
                     <h2>
-                        Built with modern
-                        business software technologies.
+                        Built for Efficient
+                        Business Operations.
                     </h2>
 
                     <p>
-                        The application combines Flutter development with
-                        backend and authentication technologies to create a
-                        practical digital attendance solution.
+                        The application uses modern mobile development
+                        technologies to create a responsive interface
+                        and maintain a structured application workflow.
+                        These tools help support maintainable code
+                        and a consistent user experience.
                     </p>
 
                 </div>
 
-
                 <div class="technologies">
 
                     <span class="tech">Flutter</span>
-
                     <span class="tech">Dart</span>
-
-                    <span class="tech">Firebase</span>
-
-                    <span class="tech">Firebase Auth</span>
-
-                    <span class="tech">Firestore</span>
-
-                    <span class="tech">Firebase Storage</span>
-
-                    <span class="tech">QR Scanner</span>
-
                     <span class="tech">GetX</span>
+                    <span class="tech">MVC Architecture</span>
+                    <span class="tech">Barcode Scanning</span>
+                    <span class="tech">Sales Management</span>
+                    <span class="tech">Inventory Management</span>
+                    <span class="tech">Excel Export</span>
 
                 </div>
 
             </div>
-
         </section>
-
 
         <!-- PROJECT HIGHLIGHTS -->
 
         <section class="highlights">
-
             <div class="case-container">
 
-                <h2>
-                    Project Highlights
-                </h2>
+                <h2>Project Highlights</h2>
 
                 <div class="highlight-grid">
 
@@ -835,17 +899,15 @@
                             01
                         </div>
 
-                        <h3>
-                            Faster Billing
-                        </h3>
+                        <h3>Streamlined Billing</h3>
 
                         <p>
-                            Replaced manual attendance processes with a
-                            structured digital workflow.
+                            Provides an organized interface for
+                            handling sales transactions and making
+                            everyday billing tasks more convenient.
                         </p>
 
                     </div>
-
 
                     <div class="highlight-card">
 
@@ -853,17 +915,15 @@
                             02
                         </div>
 
-                        <h3>
-                            Sales Tracking
-                        </h3>
+                        <h3>Product Management</h3>
 
                         <p>
-                            Designed a simple mobile interface for recording
-                            and managing attendance information.
+                            Helps organize product-related information
+                            and supports product handling within
+                            the POS workflow.
                         </p>
 
                     </div>
-
 
                     <div class="highlight-card">
 
@@ -871,31 +931,25 @@
                             03
                         </div>
 
-                        <h3>
-                            Inventory Workflow
-                        </h3>
+                        <h3>Sales Records &amp; Export</h3>
 
                         <p>
-                            Used Firebase services to support authentication
-                            and structured application data management.
+                            Supports organized sales information
+                            and Excel export functionality for
+                            reviewing records and preparing reports.
                         </p>
 
                     </div>
 
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- SCREENSHOTS -->
 
         <section class="screenshots">
-
-            <div class="case-container">
-
-                <div class="screenshots-head">
+    <div class="case-container">
+        <div class="screenshots-head">
 
                     <div>
 
@@ -903,78 +957,56 @@
                             Visual Preview
                         </span>
 
-                        <h2>
-                            Project Screenshots
-                        </h2>
+                        <h2>POS System Screenshots</h2>
 
                     </div>
 
                     <p>
-                        A visual preview of the POS System
-                        application.
+                        Explore the POS application interface and
+                        its business workflow through the available
+                        project screenshots.
                     </p>
 
                 </div>
+        <div class="screenshot-grid">
+            <div class="screenshot-card"><img src="../assets/POS Image.PNG" alt="POS System Application Interface" loading="lazy"></div>
+            <div class="screenshot-card"><img src="../assets/pos.PNG" alt="POS System Billing Screen" loading="lazy"></div>
+        </div>
+    </div>
+</section>
 
-
-                <div class="screenshot-grid">
-
-                    <div class="screenshot-card">
-
-                        <img
-                            src="../assets/Online Attendence.jpg"
-                            alt="POS System Screenshot">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
+        <!-- CALL TO ACTION -->
 
         <section class="case-cta">
-
             <div class="case-container">
 
                 <h2>
-                    Have a business software project in mind?
+                    Need a Smart POS Solution for Your Business?
                 </h2>
 
                 <p>
-                    Let's build a reliable, modern and user-friendly mobile
-                    application for your business or organization.
+                    Let's build a modern business application that
+                    simplifies billing, organizes sales records,
+                    and helps streamline your day-to-day operations.
                 </p>
-
 
                 <div class="case-actions">
 
                     <a
-                        href="#"
-                        class="case-btn"
-                        target="_blank">
-                        View Project →
-                    </a>
-
-                    <a
                         href="../index.html#contact"
-                        class="case-btn secondary">
-                        Start a Project →
+                        class="case-btn">
+                        Discuss Your Project &rarr;
                     </a>
 
                     <a
                         href="../index.html#portfolio"
                         class="case-btn secondary">
-                        ← Back to Portfolio
+                        &larr; Back to Portfolio
                     </a>
 
                 </div>
 
             </div>
-
         </section>
 
     </main>
@@ -982,4 +1014,3 @@
 </body>
 
 </html>
-```
