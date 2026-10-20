@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -7,17 +8,58 @@
 
     <title>Blog | Quebenix Technology</title>
 
-    <!-- Google Font -->
+    <meta name="description"
+        content="Explore Quebenix Technology insights on SEO, digital marketing, web development, data analytics and QA testing.">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+        rel="stylesheet">
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Header Logo Responsive Styling -->
+    <style>
+        .header .nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+            line-height: 0;
+        }
+
+        
+/* Smaller Header Logo */
+.header .header-logo {
+    width: 125px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .header .header-logo {
+        width: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .header-logo {
+        width: 95px;
+    }
+}
+
+    </style>
 </head>
 
 <body>
@@ -30,58 +72,55 @@
 
         <div class="container nav">
 
-            <!-- TEXT LOGO -->
-            <a class="logo" href="index.html">
+            <!-- ORIGINAL QUEBENIX LOGO -->
+            <a class="logo"
+                href="index.html"
+                aria-label="Quebenix Technology Home">
 
-                <span class="logo-text">
+                <img
+                    src="assets/logg.png"
+                    alt="Quebenix Technology - Innovate, Develop, Grow"
+                    class="header-logo">
+                     <div class="logo-text">
+        <span class="logo-name">QUEBENIX</span>
+        <div class="logo-sub-wrapper">
+            <span class="logo-line"></span>
+            <span class="logo-sub">TECHNOLOGY</span>
+            <span class="logo-line"></span>
+        </div>
+        <span class="logo-tagline">INNOVATE • DEVELOP • GROW</span>
+    </div>
 
-                    <span class="logo-name">
-                        Quebenix Technology
-                    </span>
-
-                    <span class="logo-tagline">
-                       INNOVATE | DEVELOP| GROW
-                    </span>
-
-                </span>
 
             </a>
 
-
             <!-- MOBILE MENU BUTTON -->
-            <button class="hamb" aria-label="Open Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button
+                class="hamb"
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false">
 
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
 
             <!-- NAVIGATION -->
             <nav>
 
-                <a href="index.html">
-                    Home
-                </a>
+                <a href="index.html">Home</a>
 
-                <a href="index.html#services">
-                    Services
-                </a>
+                <a href="index.html#services">Services</a>
 
-                <a href="index.html#portfolio">
-                    Portfolio
-                </a>
+                <a href="index.html#portfolio">Portfolio</a>
 
-                <a class="active" href="blog.html">
-                    Blog
-                </a>
+                <a class="active" href="blog.html">Blog</a>
 
-                <a href="index.html#about">
-                    About
-                </a>
+                <a href="index.html#about">About</a>
 
-                <a href="index.html#contact">
-                    Contact
-                </a>
+                <a href="index.html#contact">Contact</a>
 
                 <a class="quote" href="index.html#contact">
                     Get a Quote →
@@ -129,35 +168,34 @@
 
         <div class="container">
 
-            <!-- FILTERS -->
+            <!-- CATEGORY FILTERS -->
             <div class="filters">
 
-                <button class="active" data-filter="all">
+                <button class="active" data-filter="all" type="button">
                     All
                 </button>
 
-                <button data-filter="seo">
+                <button data-filter="seo" type="button">
                     SEO
                 </button>
 
-                <button data-filter="marketing">
+                <button data-filter="marketing" type="button">
                     Digital Marketing
                 </button>
 
-                <button data-filter="dev">
+                <button data-filter="dev" type="button">
                     Development
                 </button>
 
-                <button data-filter="qa">
+                <button data-filter="qa" type="button">
                     QA Testing
                 </button>
 
             </div>
 
 
-            <!-- POSTS -->
+            <!-- ALL BLOG POSTS -->
             <div class="all-posts">
-
 
                 <!-- POST 1 -->
                 <article class="post" data-cat="seo">
@@ -165,7 +203,7 @@
                     <img
                         src="assets/SEO.jpg"
                         alt="SEO Strategies"
-                    >
+                        loading="lazy">
 
                     <div class="meta">
                         SEO • Sep 05, 2026
@@ -180,9 +218,7 @@
                         for sustainable organic growth.
                     </p>
 
-                    <a href="#">
-                        Read Article →
-                    </a>
+                    <a href="#">Read Article →</a>
 
                 </article>
 
@@ -193,7 +229,7 @@
                     <img
                         src="assets/digital marketing.jpg"
                         alt="Digital Marketing"
-                    >
+                        loading="lazy">
 
                     <div class="meta">
                         Digital Marketing • Aug 28, 2026
@@ -208,9 +244,7 @@
                         convert and retain customers.
                     </p>
 
-                    <a href="#">
-                        Read Article →
-                    </a>
+                    <a href="#">Read Article →</a>
 
                 </article>
 
@@ -221,7 +255,7 @@
                     <img
                         src="assets/Data.jpg"
                         alt="Data Science"
-                    >
+                        loading="lazy">
 
                     <div class="meta">
                         Data Science • Aug 20, 2026
@@ -232,13 +266,12 @@
                     </h2>
 
                     <p>
-                        Data Quality, Predictive Analytics, Automation &
-                        Scalable Data Architecture for Smarter Business Decisions.
+                        Data quality, predictive analytics, automation
+                        and scalable data architecture for smarter
+                        business decisions.
                     </p>
 
-                    <a href="#">
-                        Read Article →
-                    </a>
+                    <a href="#">Read Article →</a>
 
                 </article>
 
@@ -249,7 +282,7 @@
                     <img
                         src="assets/Qa.jpg"
                         alt="QA Testing"
-                    >
+                        loading="lazy">
 
                     <div class="meta">
                         QA Testing • Aug 12, 2026
@@ -260,12 +293,11 @@
                     </h2>
 
                     <p>
-                        Reduce bugs, protect UX and launch with greater confidence.
+                        Reduce bugs, protect user experience and launch
+                        your product with greater confidence.
                     </p>
 
-                    <a href="#">
-                        Read Article →
-                    </a>
+                    <a href="#">Read Article →</a>
 
                 </article>
 
@@ -276,24 +308,22 @@
                     <img
                         src="assets/Ecommerce.png"
                         alt="Data Analytics"
-                    >
+                        loading="lazy">
 
                     <div class="meta">
                         Data Analytics • Aug 05, 2026
                     </div>
 
                     <h2>
-                        Data-Driven Insights & Practical Tips for Better
-                        Business Decisions.
+                        Data-Driven Insights for Better Business Decisions
                     </h2>
 
                     <p>
-                        Explore Data Analytics, Trends & Business Intelligence.
+                        Explore data analytics, business intelligence
+                        and practical insights to make informed decisions.
                     </p>
 
-                    <a href="#">
-                        Read Article →
-                    </a>
+                    <a href="#">Read Article →</a>
 
                 </article>
 
@@ -304,7 +334,7 @@
                     <img
                         src="assets/banner.jpg"
                         alt="Web Development"
-                    >
+                        loading="lazy">
 
                     <div class="meta">
                         Web Development • Jul 29, 2026
@@ -315,13 +345,11 @@
                     </h2>
 
                     <p>
-                        Turn your vision into a modern, scalable,
+                        Turn your vision into a modern, scalable
                         and professional website.
                     </p>
 
-                    <a href="#">
-                        Read Article →
-                    </a>
+                    <a href="#">Read Article →</a>
 
                 </article>
 
@@ -340,7 +368,7 @@
 
         <div class="container footer-main">
 
-            <!-- FOOTER TEXT BRAND -->
+            <!-- FOOTER TEXT BRAND - UNCHANGED -->
             <a class="footer-brand" href="index.html">
 
                 <span class="footer-brand-name">
@@ -348,34 +376,24 @@
                 </span>
 
                 <span class="footer-brand-tagline">
-                  INNOVATE | DEVELOP| GROW
+                    INNOVATE | DEVELOP | GROW
                 </span>
 
             </a>
 
 
-            <!-- FOOTER NAV -->
+            <!-- FOOTER NAVIGATION -->
             <div class="footer-nav">
 
-                <a href="index.html">
-                    Home
-                </a>
+                <a href="index.html">Home</a>
 
-                <a href="index.html#services">
-                    Services
-                </a>
+                <a href="index.html#services">Services</a>
 
-                <a href="index.html#portfolio">
-                    Portfolio
-                </a>
+                <a href="index.html#portfolio">Portfolio</a>
 
-                <a href="blog.html">
-                    Blog
-                </a>
+                <a href="blog.html">Blog</a>
 
-                <a href="index.html#contact">
-                    Contact
-                </a>
+                <a href="index.html#contact">Contact</a>
 
             </div>
 
@@ -394,7 +412,7 @@
     </footer>
 
 
-    <!-- JavaScript -->
+    <!-- EXISTING JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>

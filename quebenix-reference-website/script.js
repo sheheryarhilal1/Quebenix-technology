@@ -1,33 +1,114 @@
-const menu = document.querySelector('.hamb'), nav = document.querySelector('.nav nav'); menu?.addEventListener('click', () => nav.classList.toggle('open'));
-document.querySelectorAll('.nav nav a').forEach(a => a.addEventListener('click', () => nav?.classList.remove('open')));
+
+/* =========================================================
+   MOBILE NAVIGATION MENU
+========================================================= */
+
+const menu = document.querySelector('.hamb');
+const nav = document.querySelector('.nav nav');
+
+menu?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav nav a').forEach(a => {
+    a.addEventListener('click', () => {
+        nav?.classList.remove('open');
+    });
+});
+
+
+/* =========================================================
+   CONTACT FORM — QUEBENIX TECHNOLOGY
+========================================================= */
+
 const form = document.querySelector('#contactForm');
+
 form?.addEventListener('submit', e => {
     e.preventDefault();
+
     const data = new FormData(form);
+
     const name = String(data.get('name') || '').trim();
     const sender = String(data.get('email') || '').trim();
-    const service = String(data.get('service') || 'General Inquiry').trim();
-    const messageField = form.querySelector('textarea[name="message"]');
-    const message = messageField ? String(messageField.value || '').trim() : '';
-    const subject = encodeURIComponent(`Quebenix Technology Inquiry — ${service}`);
-    const body = encodeURIComponent(`Name: ${name}\nContact Email: ${sender}\nProject/Service: ${service}\n\nMessage:\n${message || 'Please contact me to discuss this project.'}`);
-    const m = document.querySelector('#formMsg');
-    if (m) {
-        m.textContent = 'Opening your email app with the message addressed to Quebenix Technology. Please press Send in your email app.';
-        m.style.color = '#078ff0';
+    const service = String(
+        data.get('service') || 'General Inquiry'
+    ).trim();
+
+    const messageField = form.querySelector(
+        'textarea[name="message"]'
+    );
+
+    const message = messageField
+        ? String(messageField.value || '').trim()
+        : '';
+
+    // Email subject
+    const subject = encodeURIComponent(
+        `Quebenix Technology Inquiry — ${service}`
+    );
+
+    // Email body
+    const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Contact Email: ${sender}\n` +
+        `Project/Service: ${service}\n\n` +
+        `Message:\n${message || 'Please contact me to discuss this project.'}`
+    );
+
+    const formMsg = document.querySelector('#formMsg');
+
+    // Show status message
+    if (formMsg) {
+        formMsg.textContent =
+            'Opening your email app. Please press Send to submit your inquiry.';
+        formMsg.style.color = '#078ff0';
     }
-    window.location.href = `mailto:quebenixtechnology4@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open the default email application
+    window.location.href =
+        `mailto:quebenixtechnology4@gmail.com?subject=${subject}&body=${body}`;
+
+    // Clear all form fields
+    form.reset();
 });
-document.querySelectorAll('[data-filter]').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('[data-filter]').forEach(x => x.classList.remove('active')); b.classList.add('active'); let f = b.dataset.filter; document.querySelectorAll('.all-posts .post').forEach(p => p.style.display = f === 'all' || p.dataset.cat === f ? 'block' : 'none') }));
+
+
+/* =========================================================
+   BLOG POST FILTER
+========================================================= */
+
+document.querySelectorAll('[data-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+
+        document.querySelectorAll('[data-filter]').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll('.all-posts .post').forEach(post => {
+            post.style.display =
+                filter === 'all' || post.dataset.cat === filter
+                    ? 'block'
+                    : 'none';
+        });
+    });
+});
+
+
 /* =========================================================
    EXPERIENCE COUNTER ANIMATION
 ========================================================= */
 
-const counters = document.querySelectorAll(".counter");
+const counters = document.querySelectorAll('.counter');
 
-const startCounter = (counter) => {
+const startCounter = counter => {
 
     const target = Number(counter.dataset.target);
+
+    if (!Number.isFinite(target) || target < 0) return;
 
     let current = 0;
 
@@ -39,15 +120,10 @@ const startCounter = (counter) => {
         current += increment;
 
         if (current < target) {
-
             counter.textContent = Math.floor(current);
-
             setTimeout(updateCounter, 20);
-
         } else {
-
             counter.textContent = target;
-
         }
     };
 
@@ -57,9 +133,13 @@ const startCounter = (counter) => {
 
 /* Start counting when Experience section becomes visible */
 
-const experienceSection = document.querySelector(".experience");
+const experienceSection = document.querySelector('.experience');
 
-if (experienceSection && counters.length) {
+if (
+    experienceSection &&
+    counters.length &&
+    'IntersectionObserver' in window
+) {
 
     const counterObserver = new IntersectionObserver(
         (entries, observer) => {
@@ -69,16 +149,12 @@ if (experienceSection && counters.length) {
                 if (entry.isIntersecting) {
 
                     counters.forEach(counter => {
-
                         startCounter(counter);
-
                     });
 
                     observer.unobserve(entry.target);
                 }
-
             });
-
         },
         {
             threshold: 0.3
@@ -87,11 +163,20 @@ if (experienceSection && counters.length) {
 
     counterObserver.observe(experienceSection);
 }
-const whySlider = document.querySelector(".why-grid");
-const whyCards = document.querySelectorAll(".why-card");
-const whyDots = document.querySelectorAll(".why-dot");
+
+
+/* =========================================================
+   WHY CHOOSE US SLIDER
+========================================================= */
+
+const whySlider = document.querySelector('.why-grid');
+const whyCards = document.querySelectorAll('.why-card');
+const whyDots = document.querySelectorAll('.why-dot');
 
 let whyIndex = 0;
+let whyAutoSlide;
+
+/* Move to the next card */
 
 function moveWhySlider() {
 
@@ -107,26 +192,35 @@ function moveWhySlider() {
 
     whySlider.scrollTo({
         left: card.offsetLeft - whySlider.offsetLeft,
-        behavior: "smooth"
+        behavior: 'smooth'
     });
 
+    updateWhyDots(whyIndex);
+}
+
+
+/* Update active slider dots */
+
+function updateWhyDots(activeIndex) {
+
     whyDots.forEach((dot, index) => {
-        dot.classList.toggle(
-            "active",
-            index === whyIndex
-        );
+        dot.classList.toggle('active', index === activeIndex);
     });
 }
 
 
-/* Auto Slide */
+/* Automatic slide */
 
-setInterval(moveWhySlider, 3000);
+if (whySlider && whyCards.length > 1) {
+
+    whyAutoSlide = setInterval(moveWhySlider, 3000);
+
+}
 
 
 /* Update dots when manually scrolling */
 
-whySlider?.addEventListener("scroll", () => {
+whySlider?.addEventListener('scroll', () => {
 
     let closest = 0;
     let smallestDistance = Infinity;
@@ -134,22 +228,16 @@ whySlider?.addEventListener("scroll", () => {
     whyCards.forEach((card, index) => {
 
         const distance = Math.abs(
-            card.offsetLeft -
-            whySlider.scrollLeft
+            card.offsetLeft - whySlider.scrollLeft
         );
 
         if (distance < smallestDistance) {
             smallestDistance = distance;
             closest = index;
         }
-
     });
 
-    whyDots.forEach((dot, index) => {
-        dot.classList.toggle(
-            "active",
-            index === closest
-        );
-    });
+    whyIndex = closest;
+    updateWhyDots(closest);
 
 });
