@@ -111,7 +111,7 @@ Open `index.html` in your browser, or use the **Live Server** extension in Visua
 
 ## 🌐 Live Website
 
-**Website:** https://delightful-puffpuff-b87c8b.netlify.app/
+**Website:** https://quebenixtechnology.netlify.app/
 
 **GitHub Repository:** Add your repository URL here.
 
@@ -135,7 +135,7 @@ A mobile application focused on location-based functionality and helping users w
 
 - **Email:** quebenixtechnology4@gmail.com
 - **Location:** Karachi, Pakistan
-- **Website:** https://delightful-puffpuff-b87c8b.netlify.app/
+- **Website:** https://quebenixtechnology.netlify.app/
 
 For business inquiries, collaborations, software development, or digital solutions, please get in touch via email.
 
