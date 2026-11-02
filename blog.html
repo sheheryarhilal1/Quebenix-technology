@@ -1,0 +1,420 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Blog | Quebenix Technology</title>
+
+    <meta name="description"
+        content="Explore Quebenix Technology insights on SEO, digital marketing, web development, data analytics and QA testing.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Header Logo Responsive Styling -->
+    <style>
+        .header .nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+            line-height: 0;
+        }
+
+        
+/* Smaller Header Logo */
+.header .header-logo {
+    width: 125px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .header .header-logo {
+        width: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .header-logo {
+        width: 95px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container nav">
+
+            <!-- ORIGINAL QUEBENIX LOGO -->
+            <a class="logo"
+                href="index.html"
+                aria-label="Quebenix Technology Home">
+
+                <img
+                    src="assets/logg.png"
+                    alt="Quebenix Technology - Innovate, Develop, Grow"
+                    class="header-logo">
+                     <div class="logo-text">
+        <span class="logo-name">QUEBENIX</span>
+        <div class="logo-sub-wrapper">
+            <span class="logo-line"></span>
+            <span class="logo-sub">TECHNOLOGY</span>
+            <span class="logo-line"></span>
+        </div>
+        <span class="logo-tagline">INNOVATE • DEVELOP • GROW</span>
+    </div>
+
+
+            </a>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="hamb"
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <!-- NAVIGATION -->
+            <nav>
+
+                <a href="index.html">Home</a>
+
+                <a href="index.html#services">Services</a>
+
+                <a href="index.html#portfolio">Portfolio</a>
+
+                <a class="active" href="blog.html">Blog</a>
+
+                <a href="index.html#about">About</a>
+
+                <a href="index.html#contact">Contact</a>
+
+                <a class="quote" href="index.html#contact">
+                    Get a Quote →
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         BLOG HERO
+    ========================== -->
+
+    <section class="blog-hero">
+
+        <div class="container">
+
+            <small class="eyebrow" style="color:#5bcaff;">
+                QUEBENIX INSIGHTS
+            </small>
+
+            <h1>
+                Ideas, Trends &
+                <span>Digital Growth.</span>
+            </h1>
+
+            <p>
+                Helpful insights on SEO, QA Testing, Digital Marketing,
+                Web Development and technology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BLOG POSTS
+    ========================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <!-- CATEGORY FILTERS -->
+            <div class="filters">
+
+                <button class="active" data-filter="all" type="button">
+                    All
+                </button>
+
+                <button data-filter="seo" type="button">
+                    SEO
+                </button>
+
+                <button data-filter="marketing" type="button">
+                    Digital Marketing
+                </button>
+
+                <button data-filter="dev" type="button">
+                    Development
+                </button>
+
+                <button data-filter="qa" type="button">
+                    QA Testing
+                </button>
+
+            </div>
+
+
+            <!-- ALL BLOG POSTS -->
+            <div class="all-posts">
+
+                <!-- POST 1 -->
+                <article class="post" data-cat="seo">
+
+                    <img
+                        src="assets/SEO.jpg"
+                        alt="SEO Strategies"
+                        loading="lazy">
+
+                    <div class="meta">
+                        SEO • Sep 05, 2026
+                    </div>
+
+                    <h2>
+                        10 Proven SEO Strategies to Grow Your Website
+                    </h2>
+
+                    <p>
+                        Technical SEO, useful content and strong architecture
+                        for sustainable organic growth.
+                    </p>
+
+                    <a href="#">Read Article →</a>
+
+                </article>
+
+
+                <!-- POST 2 -->
+                <article class="post" data-cat="marketing">
+
+                    <img
+                        src="assets/digital marketing.jpg"
+                        alt="Digital Marketing"
+                        loading="lazy">
+
+                    <div class="meta">
+                        Digital Marketing • Aug 28, 2026
+                    </div>
+
+                    <h2>
+                        How Digital Marketing Can Grow Your Business Faster
+                    </h2>
+
+                    <p>
+                        A practical framework for campaigns that attract,
+                        convert and retain customers.
+                    </p>
+
+                    <a href="#">Read Article →</a>
+
+                </article>
+
+
+                <!-- POST 3 -->
+                <article class="post" data-cat="dev">
+
+                    <img
+                        src="assets/Data.jpg"
+                        alt="Data Science"
+                        loading="lazy">
+
+                    <div class="meta">
+                        Data Science • Aug 20, 2026
+                    </div>
+
+                    <h2>
+                        Top Data Science Trends Businesses Should Know
+                    </h2>
+
+                    <p>
+                        Data quality, predictive analytics, automation
+                        and scalable data architecture for smarter
+                        business decisions.
+                    </p>
+
+                    <a href="#">Read Article →</a>
+
+                </article>
+
+
+                <!-- POST 4 -->
+                <article class="post" data-cat="qa">
+
+                    <img
+                        src="assets/Qa.jpg"
+                        alt="QA Testing"
+                        loading="lazy">
+
+                    <div class="meta">
+                        QA Testing • Aug 12, 2026
+                    </div>
+
+                    <h2>
+                        Why QA Testing Is Essential Before Product Launch
+                    </h2>
+
+                    <p>
+                        Reduce bugs, protect user experience and launch
+                        your product with greater confidence.
+                    </p>
+
+                    <a href="#">Read Article →</a>
+
+                </article>
+
+
+                <!-- POST 5 -->
+                <article class="post" data-cat="seo">
+
+                    <img
+                        src="assets/Ecommerce.png"
+                        alt="Data Analytics"
+                        loading="lazy">
+
+                    <div class="meta">
+                        Data Analytics • Aug 05, 2026
+                    </div>
+
+                    <h2>
+                        Data-Driven Insights for Better Business Decisions
+                    </h2>
+
+                    <p>
+                        Explore data analytics, business intelligence
+                        and practical insights to make informed decisions.
+                    </p>
+
+                    <a href="#">Read Article →</a>
+
+                </article>
+
+
+                <!-- POST 6 -->
+                <article class="post" data-cat="marketing">
+
+                    <img
+                        src="assets/banner.jpg"
+                        alt="Web Development"
+                        loading="lazy">
+
+                    <div class="meta">
+                        Web Development • Jul 29, 2026
+                    </div>
+
+                    <h2>
+                        Web Solutions That Grow Your Business
+                    </h2>
+
+                    <p>
+                        Turn your vision into a modern, scalable
+                        and professional website.
+                    </p>
+
+                    <a href="#">Read Article →</a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-main">
+
+            <!-- FOOTER TEXT BRAND - UNCHANGED -->
+            <a class="footer-brand" href="index.html">
+
+                <span class="footer-brand-name">
+                    Quebenix Technology
+                </span>
+
+                <span class="footer-brand-tagline">
+                    INNOVATE | DEVELOP | GROW
+                </span>
+
+            </a>
+
+
+            <!-- FOOTER NAVIGATION -->
+            <div class="footer-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="index.html#services">Services</a>
+
+                <a href="index.html#portfolio">Portfolio</a>
+
+                <a href="blog.html">Blog</a>
+
+                <a href="index.html#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+        <div class="container bottom">
+
+            <span>
+                © 2026 Quebenix Technology. All rights reserved.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- EXISTING JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
