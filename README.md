@@ -1,35 +1,121 @@
-# Quebenix Technology — Reference Design
+# Quebenix Technology — Official Website
 
-This website is built to closely follow the uploaded reference screenshot: same section order, dark/white alternating layout, blue glassy accents, cards, portfolio, blog, testimonials, contact and footer.
+A modern, responsive business website for **Quebenix Technology**, designed with a premium visual style, dark and light section layouts, blue glassmorphism effects, and a clean user interface.
 
-## Run in VS Code
-1. Extract the ZIP.
-2. Open this folder in VS Code.
-3. Open `index.html`.
-4. Recommended: install **Live Server** and click **Go Live**.
-5. Open `blog.html` from the Blog link.
+The website follows the supplied reference design while presenting the company's services, portfolio, business experience, client testimonials, blog, and contact information.
 
-## Assets
-The `assets` folder contains the visual crops taken from the supplied reference screenshot so the local build visibly follows the reference. Replace these crops with original/high-resolution images when you have them.
+## 🚀 Key Features
 
-## Contact
-Phone: +92 326 2434508
-Email: quebenixtechnology4@gmail.com
-Location: Lahore, Pakistan
+- Modern and fully responsive website design.
+- Dark and white alternating section layouts.
+- Premium blue glassmorphism effects and visual accents.
+- Professional hero section and company introduction.
+- Dedicated services section featuring 8 core services.
+- Expanded portfolio showcasing 8 projects.
+- Business experience and industry expertise section.
+- Company statistics and achievements.
+- Client testimonials section.
+- Dedicated blog page.
+- Contact section with frontend contact form.
+- Custom Quebenix Technology branding and logo integration.
+- Locally stored assets for improved reliability.
 
-The contact form is a frontend demo until connected to a backend/email service.
+## 💼 Our Services
 
+The website highlights eight core services:
 
-UPDATED VERSION
-- 8 services: QA Testing, SEO, Digital Marketing, Web Development, Mobile App Development, UI/UX Design, Data Analysis, Data Science.
-- Portfolio expanded to 8 project cards.
-- Added experience/delivery stats: 5+ years experience, 120+ projects completed, 50+ clients, 8 core services.
-- Added industry/business-type experience section.
-- Existing reference images remain in assets and are reused for expanded portfolio cards, so no external image dependency is required for those visuals.
-- No unverified client/company names were added as factual claims.
+1. QA Testing
+2. SEO (Search Engine Optimization)
+3. Digital Marketing
+4. Web Development
+5. Mobile App Development
+6. UI/UX Design
+7. Data Analysis
+8. Data Science
 
+## 📊 Company Statistics
 
-## Official Brand Logo
-- Added the supplied Quebenix Technology logo to the website header.
-- Added the full supplied logo lockup, including **INNOVATE • DEPLOY • GROW**, to the footer.
-- Logo assets are stored locally in `assets/logo-header.png` and `assets/logo-footer.png`, so the site does not depend on an external logo URL.
+- **5+ Years** — Experience
+- **120+** — Projects Completed
+- **50+** — Clients
+- **8** — Core Services
+
+## 🖥️ Portfolio
+
+The portfolio section features eight project cards showcasing different areas of software development and digital solutions.
+
+Existing reference images have been reused and organized within the local `assets` folder to maintain visual consistency without requiring external image dependencies.
+
+## 🎨 Brand Identity
+
+The website incorporates the official Quebenix Technology branding.
+
+- Official header logo.
+- Complete footer logo lockup.
+- Brand tagline: **INNOVATE • DEPLOY • GROW**
+- Primary colors: Blue, Cyan, and Dark Navy.
+- Premium, modern, and professional visual identity.
+
+### Logo Assets
+
+- `assets/logo-header.png` — Header logo.
+- `assets/logo-footer.png` — Full footer logo with tagline.
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome Icons
+- Google Fonts
+
+## 📂 Project Structure
+
+```text
+Quebenix-Technology/
+│
+├── index.html
+├── blog.html
+├── style.css
+├── script.js
+│
+└── assets/
+    ├── logo-header.png
+    ├── logo-footer.png
+    └── images/
+```
+
+## ⚙️ Run Locally in VS Code
+
+Follow these steps to run the website:
+
+1. Download or clone the repository.
+2. Extract the ZIP file if downloaded.
+3. Open the project folder in Visual Studio Code.
+4. Open `index.html`.
+5. Install the **Live Server** extension.
+6. Right-click `index.html` and select **Open with Live Server**.
+7. Access the blog through the Blog navigation link or open `blog.html` directly.
+
+## 📞 Contact Information
+
+**Quebenix Technology**
+
+- Phone: +92 326 2434508
+- Email: quebenixtechnology4@gmail.com
+- Location: Lahore, Pakistan
+
+**Brand Tagline:** INNOVATE • DEPLOY • GROW
+
+## 📝 Important Notes
+
+- The website uses locally stored assets.
+- Reference screenshot crops are reused for certain portfolio visuals and can be replaced with original high-resolution images.
+- The contact form is currently a frontend demonstration and requires backend or email service integration to receive actual submissions.
+- No unverified client or company names are presented as factual business partnerships.
+
+---
+
+**Developed for Quebenix Technology**
+
+*Innovate. Develop. Grow.*
